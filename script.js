@@ -514,7 +514,7 @@ const faqListArray = [
       "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
   },
   {
-    title: "I use a phone system. Can I use CallGenie.ai?",
+    title: "I use a phone system. Can I use ClinGenie.ai?",
     description:
       "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
   },
