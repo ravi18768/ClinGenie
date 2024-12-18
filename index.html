@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinGenie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <header>
+        <nav class="header-container">
+            <div class="listContainer">
+                <img src="./assets/images/mainLogo.svg" alt="ClinGenie" class="mainLogo" />
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#pricing">Price</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="menuDiv">
+                <a href="#" class="signin">Sign In</a>
+                <button class="btn bt2">Book a Demo</button>
+                <button id="showButton" class="hamburger-menu" aria-label="Toggle navigation">
+                    ☰
+                </button>
+            </div>
+        </nav>
+        <div>
+            <div id="targetDiv" class="hidden fade-in">
+                <div class="hideMenu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Price</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li> <a href="#" class="signin-drawer">Sign In</a></li>
+                        <li class="demo-btn-drawer"> <button class="btn-drawer">Book a
+                                Demo</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center">
+                <div class="p1">
+                    <span>
+                        Transform missed calls into business wins with AI-powered, human-like phone agents - <a
+                            class="a1">Join
+                            Now!</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- this is a main hero section -->
+    <main>
+        <!-- this section is used to display the main hero section -->
+        <section class="max-container">
+            <div class="hero-top-container">
+                <div class="hero-chip-container">
+                    <p class="p2"><span class="chip">NEW</span><span>
+                            Simplify your day -let AI handle calls for you, 24/7
+                        </span> </p>
+                </div>
+                <div class="box1-content">
+                    <h1>
+                        Handle calls efficiently through AI phone <br> agents that
+                        <span class="highlightText random-text">make outbound calls</span>
+                    </h1>
+                    <p>Build AI-powered voice agents that sound human and ready to manage <br> your calls 24/7
+                        that set up in
+                        under 60
+                        seconds.</p>
+
+                </div>
+                <div class="features">
+                    <p>Call Center</p>
+                    <p>Insurance Industry</p>
+                    <p>Clinics</p>
+                    <p>Recruitment</p>
+                    <p>Auto</p>
+                    <p>Finance</p>
+                    <p>Legal</p>
+                    <p>Customer Support</p>
+                </div>
+                <div class="container">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/LXb3EKWsInQ?si=SPcAv8pDRzAqKSor"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="form-container">
+                        <!-- <div class="target-container">
+              <img src="/assets/images/target-arrow.svg" style="height: 130px;" />
+              <p style="text-align: center;margin-left: -50px;margin-top: -40px;">Try A free<br> test call</p>
+            </div> -->
+                        <div style="display: flex;">
+                            <!-- <img src="./assets/images/Img.png" alt="User Icon"> -->
+                            <h2 class="see-how-title">See How ClinGenie Connects with End Users</h2>
+                        </div>
+                        <div class="form-group">
+                            <img src="./assets/images/users.svg" alt="User Icon">
+                            <label for="name">Your Name</label>
+                            <input type="text" placeholder="Name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <img src="./assets/images/email.svg" alt="Email Icon">
+                            <label for="email">Your Email</label>
+                            <input type="email" placeholder="Email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="phone">
+                                <select id="country-select">
+                                    <input type="number" maxlength="10" placeholder="phone" id="phone">
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn">Call me now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <!-- this section is used to display the footer design -->
+    <footer>
+        <div class="max-container">
+            <div class="main-footer">
+                <div class="footer-container">
+                    <div class="footer-column logo-section">
+                        <img src="./assets/images/mainLogo.svg" alt="ClinGenie" class="mainLogo" />
+                        <p>
+                            Stay up to date with the latest in phone call automation and AI innovations.
+                            Subscribe now to receive exclusive tips, product updates, and special offers
+                            directly in your inbox.
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms And Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="#">Try For Free</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Sign Up Now</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Solution</h3>
+                        <ul>
+                            <li><a href="#">See Autocalls In Action</a></li>
+                            <li><a href="#">Use Cases</a></li>
+                            <li><a href="#">No-Code Platform</a></li>
+                            <li><a href="#">Available Languages</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Industries</h3>
+                        <ul>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Call Center</a></li>
+                            <li><a href="#">Real Estate</a></li>
+                            <li><a href="#">Online Stores</a></li>
+                            <li><a href="#">Medical</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="social-column">
+                        <h3>Social Media</h3>
+                        <ul>
+                            <li> <i class="fa fa-instagram"></i><a href="#"> Instagram</a></li>
+                            <li><i class="fa fa-facebook-f"></i><a href="#"> Facebook</a></li>
+                            <li><i class="fa fa-linkedin"></i><a href="#"> LinkedIn</a></li>
+                            <li><i class="fa fa-twitter"></i><a href="#"> Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>Copyright © 2024 All rights reserved</p>
+                    <span>ClinGenie.AI</span>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
