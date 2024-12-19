@@ -322,15 +322,15 @@ function initializeWaveSurfer(
         .querySelector(".play-btn span.playing")
         ?.classList.replace("playing", "paused");
       playButton.querySelector("span").textContent = "▶";
-      playButton.querySelector("span").style.cssText = "font-size:36px";
+      playButton.querySelector("span").style.cssText = "font-size:20px";
     }
 
     // Toggle play/pause for this instance
     isPlaying ? wavesurfer.pause() : wavesurfer.play();
     playButton.querySelector("span").textContent = isPlaying ? "▶" : "⏸";
     playButton.querySelector("span").style.cssText = isPlaying
-      ? "font-size:36px"
-      : "font-size:54px";
+      ? "font-size:20px"
+      : "font-size:34px";
     isPlaying = !isPlaying;
     currentPlayingState.currentPlaying = wavesurfer;
     currentPlayingState.currentButton = null;
@@ -338,14 +338,14 @@ function initializeWaveSurfer(
 
   wavesurfer.on("pause", () => {
     playButton.querySelector("span").textContent = "▶";
-    playButton.querySelector("span").style.cssText = "font-size:36px";
+    playButton.querySelector("span").style.cssText = "font-size:20px";
     isPlaying = false;
   });
 
   // Reset state when playback finishes
   wavesurfer.on("finish", () => {
     playButton.querySelector("span").textContent = "▶";
-    playButton.querySelector("span").style.cssText = "font-size:36px";
+    playButton.querySelector("span").style.cssText = "font-size:26px";
     isPlaying = false;
   });
 }
@@ -385,6 +385,37 @@ function renderSlider() {
   });
 }
 renderSlider();
+
+//out-call-and-in-call-toggle
+const outCallElements = document.querySelectorAll(".outCall");
+// Add click event listener to each element
+outCallElements.forEach((outCall) => {
+  outCall.addEventListener("click", function () {
+    // Remove the 'active' class from all elements
+    outCallElements.forEach((el) => {
+      el.classList.remove("active");
+      const details = el.nextElementSibling;
+      if (details && details.classList.contains("outCall-details")) {
+        details.querySelectorAll("div").forEach((item) => {
+          item.style.borderColor = ""; // Reset border color
+        });
+      }
+    });
+
+    // Toggle the 'active' class on the clicked element
+    this.classList.toggle("active");
+
+    // Change border color of the sibling '.outCall-details' items
+    const details = this.nextElementSibling;
+    if (details && details.classList.contains("outCall-details")) {
+      details.querySelectorAll("div").forEach((item) => {
+        item.style.borderColor = this.classList.contains("active")
+          ? "green"
+          : ""; // Change border
+      });
+    }
+  });
+});
 
 // toggle option
 const toggleOptions = document.querySelectorAll(".toggle-option");
