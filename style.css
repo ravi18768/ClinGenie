@@ -643,12 +643,12 @@ footer {
 }
 
 /* ai agents voice section */
-.ai-agents-section-main h1 {
+.revolutionary-section-main h1 {
   text-align: center;
 }
 
 @media (min-width: 800px) and (max-width: 900px) {
-  .ai-agents-section-main h1 {
+  .revolutionary-section-main h1 {
     font-size: 40px;
   }
   .voice-agent-subTitle p {
@@ -656,7 +656,7 @@ footer {
   }
 }
 @media (min-width: 600px) and (max-width: 800px) {
-  .ai-agents-section-main h1 {
+  .revolutionary-section-main h1 {
     font-size: 30px;
   }
   .voice-agent-subTitle p {
@@ -2110,7 +2110,7 @@ textarea {
     padding: 60px 30px;
   }
 }
-.max-container-ai-voice-agents {
+.max-container-revolutionary {
   max-width: 1400px;
   margin: 0 auto;
   padding: 60px 0px;
@@ -2118,12 +2118,12 @@ textarea {
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
-  .max-container-ai-voice-agents {
+  .max-container-revolutionary {
     padding: 30px 30px;
   }
 }
 @media (min-width: 600px) and (max-width: 1500px) {
-  .max-container-ai-voice-agents {
+  .max-container-revolutionary {
     padding: 60px 30px;
   }
 }
