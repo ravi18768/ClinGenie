@@ -490,113 +490,180 @@ const faqListArray = [
       "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
   },
 ];
-
-// Get the container where the content will be added
 const faqBlock = document.getElementById("faq-block");
 
 // Create a list
 const faqList = document.createElement("ul");
+faqList.style.listStyle = "none";
+faqList.style.padding = "0";
 
 // Variable to keep track of the currently open description
 let openDescription = null;
-let openParentDiv = null; // To track the currently active parent div
+let openParentDiv = null;
 let openToggleButton = null;
+let openTitle = null;
 
 // Loop through the faqListArray to create list items dynamically
-faqListArray.forEach((feature, index) => {
+faqListArray.forEach((feature) => {
   // Create the parent div
   const parentDiv = document.createElement("div");
   parentDiv.style.borderRadius = "5px";
-  parentDiv.style.transition = "background-color 0.3s ease";
+  parentDiv.style.transition = "all 0.3s ease";
   parentDiv.style.padding = "5px";
+  parentDiv.style.marginBottom = "10px";
 
   // Create the list item
   const li = document.createElement("li");
-  li.style.position = "relative"; // To align the icon properly
-  li.style.cursor = "pointer"; // Indicate clickable
+  li.style.position = "relative";
+  li.style.cursor = "pointer";
 
   // Create the title paragraph
   const title = document.createElement("p");
   title.textContent = feature.title;
-  title.style.cssText =
-    "background-color:#F8F8F8; padding:10px;border-radius:12px;margin:0;cursor:pointer";
-  li.appendChild(title);
+  title.style.cssText = `
+    background-color: #F8F8F8;
+    padding: 20px 50px 20px 20px;
+    border-radius: 12px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  `;
 
-  // Create a description paragraph and hide it initially
+  // Create a description paragraph
   const description = document.createElement("p");
   description.classList.add("description");
   description.textContent = feature.description;
-  description.style.maxHeight = "0"; // Hidden by default
-  description.style.overflow = "hidden"; // Ensure no content overflows
-  description.style.transition = "max-height 0.6s ease"; // Smooth open/close
-  description.style.marginTop = "10px";
+  description.style.cssText = `
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.3s ease;
+    margin-top: 10px;
+    padding: 0 20px;
+    opacity: 0;
+  `;
 
-  // Create the toggle button (plus by default)
+  // Create the toggle button
   const toggleButton = document.createElement("span");
   toggleButton.textContent = "+";
-  toggleButton.style.position = "absolute";
-  toggleButton.style.right = "10px";
-  toggleButton.style.top = "50%";
-  toggleButton.style.transform = "translateY(-50%)";
-  toggleButton.style.cursor = "pointer";
-  toggleButton.style.fontSize = "30px";
-  toggleButton.style.opacity = "0.3";
+  toggleButton.style.cssText = `
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 30px;
+    color: #B4BBC5;
+    transition: all 0.3s ease;
+  `;
+
+  const resetStyles = (element) => {
+    if (!element) return;
+
+    if (element === openTitle) {
+      element.style.cssText = `
+        background-color: #F8F8F8;
+        padding: 20px 50px 20px 20px;
+        border-radius: 12px;
+        margin: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: black;
+      `;
+    } else if (element === openDescription) {
+      element.style.cssText = `
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s ease, opacity 0.3s ease;
+        margin-top: 10px;
+        padding: 0 20px;
+        opacity: 0;
+      `;
+    } else if (element === openToggleButton) {
+      element.style.cssText = `
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 30px;
+        color: #B4BBC5;
+        transition: all 0.3s ease;
+      `;
+      element.textContent = "+";
+    }
+
+    if (openParentDiv) {
+      openParentDiv.style.backgroundColor = "";
+    }
+  };
 
   const toggleDescription = () => {
     const isOpen = openDescription === description;
 
-    // Close the currently open description, if any
-    if (openDescription) {
-      openDescription.style.maxHeight = "0";
-      openParentDiv.style.backgroundColor = ""; // Reset background color
-      openToggleButton.textContent = "+";
-    }
+    // Reset previously open elements
+    resetStyles(openTitle);
+    resetStyles(openDescription);
+    resetStyles(openToggleButton);
 
     if (!isOpen) {
       // Open the new description
       description.style.maxHeight = `${description.scrollHeight}px`;
-      title.style.color = "white";
-      title.style.backgroundColor = "transparent";
+      description.style.opacity = "1";
+
+      title.style.cssText = `
+        background-color: transparent;
+        padding: 20px 50px 20px 20px;
+        border-radius: 12px;
+        margin: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+      `;
+
       description.style.color = "white";
-      toggleButton.textContent = "";
+
+      toggleButton.style.cssText = `
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 35px;
+        color: white;
+        transition: all 0.3s ease;
+      `;
+      toggleButton.textContent = "×";
+
       parentDiv.style.backgroundColor = "#4caf50";
 
       // Update the references
       openDescription = description;
       openParentDiv = parentDiv;
       openToggleButton = toggleButton;
+      openTitle = title;
     } else {
-      // Reset the references if the same item is toggled
-      title.style.cssText =
-        "background-color:#F8F8F8; padding:10px;border-radius:12px;margin:0;cursor:pointer;color:black";
-
-      description.style.color = "black";
+      // Reset all references if the same item is toggled
       openDescription = null;
       openParentDiv = null;
       openToggleButton = null;
+      openTitle = null;
     }
   };
 
-  // Add click event listener to the toggle button
-  toggleButton.addEventListener("click", (e) => {
+  // Add click event listeners
+  const handleClick = (e) => {
     e.stopPropagation();
     toggleDescription();
-  });
+  };
 
-  // Add click event listener to the title
-  title.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleDescription();
-  });
+  toggleButton.addEventListener("click", handleClick);
+  title.addEventListener("click", handleClick);
 
-  // Append the toggle button and description to the list item
+  // Append elements
+  li.appendChild(title);
   li.appendChild(toggleButton);
   li.appendChild(description);
-
-  // Append the list item to the parent div
   parentDiv.appendChild(li);
-
-  // Append the parent div to the FAQ list
   faqList.appendChild(parentDiv);
 });
 

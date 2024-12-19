@@ -1946,17 +1946,6 @@ textarea {
   }
 }
 
-/* security and FAQ section style */
-.sec-faq-container {
-  background-color: var(--bg-color);
-}
-
-@media (max-width: 900px) {
-  .sec-faq-container {
-    margin-bottom: 100px;
-  }
-}
-
 .sec-faq-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1970,7 +1959,6 @@ textarea {
   }
 }
 
-.security,
 .faq {
   flex: 1;
 }
@@ -2035,28 +2023,37 @@ textarea {
   margin-top: 10px;
   padding: 30px 20px;
 }
+
+@media (max-width: 768px) {
+  .faq-block {
+    padding: 5px 0px;
+  }
+}
+
 .faq-block ul {
   list-style-type: none;
 }
 .faq-block ul li p {
   font-size: 20px;
-  font-family: var(--title-font-family);
-  font-weight: 700;
-  color: var(--white);
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+  color: #061c3d;
 }
+
 .faq-block ul p {
   font-size: 20px;
   font-family: var(--font-family-primary);
   color: #c3c6c6;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
 }
 .faq-block .description {
-  font-size: 16px;
+  font-size: 17px;
   font-family: var(--font-family-primary);
   color: #c3c6c6;
   font-weight: 400;
   line-height: 24px;
+  margin-bottom: 10px;
 }
 
 /* common style classes */
@@ -2354,9 +2351,10 @@ textarea {
 .faq-title {
   color: var(--h1-color);
   line-height: 60px;
-  font-family: var(--title-font-family);
+  font-family: var(--font-family-primary);
   font-weight: 700;
   font-size: 45px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -2369,7 +2367,7 @@ textarea {
 @media (max-width: 768px) {
   .faq-title {
     line-height: 40px;
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 
