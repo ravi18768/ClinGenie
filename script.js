@@ -507,7 +507,7 @@ let openTitle = null;
 faqListArray.forEach((feature) => {
   // Create the parent div
   const parentDiv = document.createElement("div");
-  parentDiv.style.borderRadius = "5px";
+  parentDiv.style.borderRadius = "15px";
   parentDiv.style.transition = "all 0.3s ease";
   parentDiv.style.padding = "5px";
   parentDiv.style.marginBottom = "10px";
