@@ -162,46 +162,65 @@ const gradientColors = [
 const voiceArr = [
   {
     profile_pic: "./assets/images/profile1.png",
-    name: "Jordan - CandleScent eshop",
+    name: "Study Recruitment",
     audio:
       "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/da-DK_sample_speach.mp3",
-    audio_name: "audio name will be displayed here",
-    end_time: "2:00m",
     description:
-      "Simplify and expedite the refund process for your customers with AI-powered agents. Streamline inquiries, provide real-time updates,and ensure a seamless experience for all refund request",
+      "Prescreening Facilitates participant onboarding by screening and recruiting for studies.",
   },
-
   {
-    profile_pic: "./assets/images/profile1.png",
-    name: "Jordan - CandleScent eshop",
+    profile_pic: "./assets/images/profile2.png",
+    name: "Smart Qualification",
     audio:
       "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/cs_sample_speach.mp3",
-    audio_name: "audio name will be displayed here",
-    end_time: "2:30m",
     description:
-      "Simplify and expedite the refund process for your customers with AI-powered agents. Streamline inquiries, provide real-time updates,and ensure a seamless experience for all refund request",
+      "Uses AI to qualify patients effectively based on predefined criteria.",
   },
-
   {
     profile_pic: "./assets/images/profile1.png",
-    name: "Jordan - CandleScent eshop",
+    name: "Appointment Management",
     audio:
       "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/nl_sample_speach.mp3",
-    audio_name: "audio name will be displayed here",
-    end_time: "1:30m",
-    description:
-      "Simplify and expedite the refund process for your customers with AI-powered agents. Streamline inquiries, provide real-time updates,and ensure a seamless experience for all refund request",
+    description: "Schedules, reschedules, or cancels appointments efficiently.",
   },
-
   {
-    profile_pic: "./assets/images/profile1.png",
-    name: "Jordan - CandleScent eshop",
+    profile_pic: "./assets/images/profile2.png",
+    name: "Appointment Confirmation",
     audio:
       "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/fr_sample_speach.mp3",
-    audio_name: "audio name will be displayed here",
-    end_time: "3:30m",
     description:
-      "Simplify and expedite the refund process for your customers with AI-powered agents. Streamline inquiries, provide real-time updates,and ensure a seamless experience for all refund request",
+      "Confirms appointments with participants via automated processes.",
+  },
+  {
+    profile_pic: "./assets/images/profile1.png",
+    name: "Multilingual Support",
+    audio:
+      "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/da-DK_sample_speach.mp3",
+    description:
+      "Provides support in multiple languages to ensure inclusivity and accessibility.",
+  },
+  {
+    profile_pic: "./assets/images/profile2.png",
+    name: "Leave Voicemails",
+    audio:
+      "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/cs_sample_speach.mp3",
+    description:
+      "Allows automated or manual voicemail drops for important updates.",
+  },
+  {
+    profile_pic: "./assets/images/profile1.png",
+    name: "Smooth Human Transfer",
+    audio:
+      "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/nl_sample_speach.mp3",
+    description: "Transfers calls seamlessly to a human agent when necessary.",
+  },
+  {
+    profile_pic: "./assets/images/profile2.png",
+    name: "Inbound Management",
+    audio:
+      "https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/audio_samples/fr_sample_speach.mp3",
+    description:
+      "Handles inbound calls with AI to manage queries and provide accurate responses.",
   },
 ];
 
@@ -270,7 +289,7 @@ function initializeWaveSurfer(
   currentPlayingState
 ) {
   const randomNumbers = Array.from(
-    { length: 70 },
+    { length: 60 },
     () => Math.floor(Math.random() * 9) + 2
   );
   const playButton = document.getElementById(`${btn}`);
@@ -280,12 +299,12 @@ function initializeWaveSurfer(
   const wavesurfer = WaveSurfer.create({
     container: `#${container}`,
     waveColor: "#fff",
-    progressColor: "#414141",
+    progressColor: "#33c275",
     back: "#000",
-    barWidth: 4,
-    barGap: 7,
+    barWidth: 2,
+    barGap: 5,
     barRadius: 2,
-    barHeight: 0.7,
+    barHeight: 0.6,
     responsive: true,
     url: item?.audio,
     peaks: [randomNumbers], // Add peaks to waveform
@@ -331,105 +350,28 @@ function initializeWaveSurfer(
   });
 }
 
-const container = document.querySelector(".language-container");
-const audioElements = [];
-// Create cards dynamically
-languages.forEach((language, index) => {
-  const card = document.createElement("div");
-  card.classList.add("language-card-container");
-
-  card.innerHTML = `
-  <div class="language-card">
-    <div class="language-info" id="audio${index}>
-        <div class="flag-img">
-          <img src="${language.flag}" alt="${language.name}" class="flag-img">
-        </div>
-      <div id="waveform-${language.code}" class="waveform">
-          <img src="/assets/images/wave.png" class="wave-img"/>
-          <p class="language-name">${language.name} - ${language.code}</p>
-      </div>
-        <button class="audio-button" id="audioButton${index}")">▶</button>
-    </div>
-  </div>
-  `;
-
-  container.appendChild(card);
-
-  const audioElement = document.createElement("audio");
-  audioElement.src = language.audio;
-  audioElement.preload = "auto";
-
-  // Add the audio element to the array
-  audioElements.push(audioElement);
-
-  const playButton = document.getElementById(`audioButton${index}`);
-  let isPlaying = false;
-
-  // Toggle play/pause
-  playButton.addEventListener("click", () => {
-    // Stop all other audios
-    audioElements.forEach((audio, idx) => {
-      if (audio !== audioElement) {
-        audio.pause();
-        audio.currentTime = 0; // Reset the playback to the beginning
-        const otherButton = document.getElementById(`audioButton${idx}`);
-        otherButton.textContent = "▶"; // Reset the button icon
-        playButton.style.cssText = "font-size:14px";
-      }
-    });
-
-    // Play or pause the current audio
-    isPlaying ? audioElement.pause() : audioElement.play();
-    playButton.textContent = isPlaying ? "▶" : "⏸";
-    playButton.style.cssText = isPlaying ? "font-size:14px" : "font-size:24px";
-    isPlaying = !isPlaying;
-  });
-
-  // Reset button when playback ends
-  audioElement.addEventListener("ended", () => {
-    playButton.textContent = "▶";
-    playButton.style.cssText = "font-size:14px";
-    isPlaying = false;
-  });
-});
-
-// slider
-const slider = document.querySelector(".slider");
+const slider = document.querySelector(".voice-card-container");
 let currentIndex = 0;
 let currentPlaying = null;
 function renderSlider() {
   voiceArr.forEach((item, index) => {
-    const slide = document.createElement("swiper-slide");
+    const slide = document.createElement("div");
     slide.classList.add("voice-card");
-    slide.innerHTML = `
-              <div class="profile">
-                <img src=${item?.profile_pic} alt="profile" />
-                <div class="details">
-                  <p>${item?.name}</p>
-                  <div class="list">
-                    <div><span>&#x2022</span>inbound agent</div>
-                    <div class="list-border"><span>&#x2022</span> clear & natural male</div>
-                    <div class="list-border"><span>&#x2022</span> english-en-US</div>
-                  </div>
-                </div>
-              </div>
-              <div class="audio-wave">
-                <div id="waveform${index}" style="width:100%">
-                  <div class="audio-name">${item?.audio_name}</div>
-                </div>
-                <div class="audio-time">
-                  <p>0:00m</p>
-                  <p>${item?.end_time}</p>
-                </div>
-                <div class="play">
-                  <button class="play-btn" id="playButton${index}">
-                    <span>▶</span>
-                  </button>
-                </div>
-              </div>
-              <div class="audio-description">
-                <p>${item?.description}</p>
-              </div>`;
+    slide.innerHTML = `<div class="profile">
+                        <img src=${item?.profile_pic} alt="profile" />
+                        <div class="details">
+                            <h2>${item?.name}</h2>
+                            <p>${item?.description}</p>
+                        </div>
+                    </div>
+                    <div class="audio-wave">
+                        <div id="waveform${index}" style="width:100%"></div>
+                        <div class="play">
+                            <button class="play-btn" id="playButton${index}">
+                                <span>▶</span>
+                            </button>
+                        </div>
+                    </div>`;
     slider.appendChild(slide);
 
     //audio wave
