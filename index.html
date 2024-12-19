@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.1/lottie.min.js"></script>
 
     <header>
         <nav class="header-container">
@@ -103,7 +103,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <div class="form-container">
+                    <div class="form-container" style="position: relative;">
                         <div>
                             <h3 class="see-how-title">See how,<span class="highlightText">
                                     ClinGenie
@@ -129,6 +129,12 @@
                             </div>
                         </div>
                         <button class="btn">Call me now</button>
+
+                        <!-- Element to render the animation -->
+                        <div id="lottie-animation" class="arrow-lottie">
+                            <p style="rotate: -120deg;position: absolute;padding-left: 60px;">Try A free<br /> test call
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
