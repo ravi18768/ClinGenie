@@ -69,14 +69,14 @@ h1 {
 h2 {
   color: var(--h1-color);
   line-height: 60px;
-  font-family: var(--title-font-family);
+  font-family: var(--font-family-primary);
   font-weight: 700;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 @media (max-width: 768px) {
   .sub-title {
-    font-size: 35px;
+    font-size: 25px;
     line-height: 40px;
   }
 }
@@ -110,6 +110,7 @@ p {
   width: 11rem;
   height: 2.5rem;
 }
+
 @media (max-width: 500px) {
   .mainLogo {
     max-width: 8rem;
@@ -1300,11 +1301,11 @@ footer {
 }
 
 /* ai phone agent  section*/
-.ai-phone-agent {
+.patient-recruitment {
   text-align: center;
 }
 
-.ai-phone-agent h1 {
+.patient-recruitment h1 {
   margin: 20px 0;
 }
 
@@ -1321,7 +1322,6 @@ footer {
 .calendar {
   border-radius: 16px;
   flex: 1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .calendar img {
   object-fit: contain;
@@ -1362,10 +1362,11 @@ footer {
   background: #ffffff;
   padding: 12px;
   border-radius: 8px;
-  display: flex;
+  display: grid;
   align-items: center;
   gap: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  grid-template-columns: 2fr 1fr;
 }
 
 .appointment img {
@@ -1374,7 +1375,22 @@ footer {
 }
 
 .content {
-  flex: 1;
+  width: 30%;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    width: 40%;
+  }
+  h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    width: 100%;
+  }
 }
 
 .content ul {
@@ -1386,6 +1402,7 @@ footer {
   .appointment-section {
     flex-direction: column;
     gap: 16px;
+    padding: 0px;
   }
 
   .calendar-header .days button {
@@ -1393,9 +1410,32 @@ footer {
     padding: 8px;
   }
 }
-/* custom support */
-.custom-support-container {
-  background-color: var(--secondary-color);
+@media (max-width: 900px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .pre-screening-section {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .automate-engagement-section {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .analytics-reports-section {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .calendar-header .days button {
+    font-size: 12px;
+    padding: 8px;
+  }
 }
 
 /* automate phone ai */
@@ -2090,7 +2130,7 @@ textarea {
 }
 
 .main-paragraph {
-  color: #1a1d1e;
+  color: #3e3e3e;
   line-height: 24px;
   font-size: 20px;
   font-weight: 400;
@@ -2098,6 +2138,12 @@ textarea {
   margin: 30px 0px 30px 0px;
 }
 
+@media (max-width: 900px) {
+  .main-paragraph {
+    margin: 20px 0px 30px 0px;
+    font-size: 18px;
+  }
+}
 @media (max-width: 768px) {
   .main-paragraph {
     line-height: 20px;
@@ -2107,10 +2153,10 @@ textarea {
 
 .list-container li {
   font-family: var(--font-family-primary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #030014;
+  color: #3e3e3e;
   margin-bottom: 15px;
 }
 
@@ -2576,7 +2622,7 @@ textarea {
 }
 
 @media (max-width: 700px) {
-  .ai-phone-agent .appointment-section {
+  .patient-recruitment .appointment-section {
     padding: 30px 0;
     width: 100%;
   }
@@ -2589,11 +2635,32 @@ textarea {
 }
 
 @media (max-width: 600px) {
-  .ai-phone-agent .appointment-section {
+  .patient-recruitment .appointment-section {
     display: flex;
   }
 
   .comparison-container {
     width: 90%;
   }
+}
+
+/* End-to-End Patient Recruitment Automation  */
+
+.sub-title {
+  color: var(--black);
+  border-radius: 7px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.import-leads-container {
+  background-color: #fffcf8;
+}
+
+#lead-generation {
+  background-color: #fffcf8;
+}
+
+#feedback-smarter {
+  background-color: #fffcf8;
 }
