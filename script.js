@@ -453,60 +453,6 @@ toggleOptions.forEach((option) => {
   });
 });
 
-// Define an array of security features
-const securityFeatures = [
-  {
-    title: "Advanced encryption",
-    description:
-      "We protect data with top encryption technologies for maximum security.",
-  },
-  {
-    title: "Global compliance",
-    description:
-      "We comply with GDPR, AI EU Act, and other international data protection regulations.",
-  },
-  {
-    title: "Security certifications",
-    description:
-      "We comply with GDPR, AI EU Act, and other international data protection regulations.",
-  },
-];
-
-// create a security feature list
-const securityBlock = document.getElementById("security-block");
-// Create a list
-const ul = document.createElement("ul");
-// Loop through the securityFeatures array to create list items dynamically
-securityFeatures.forEach((feature) => {
-  // Create list item
-  const li = document.createElement("li");
-
-  // Create the title paragraph with checkmark
-  const title = document.createElement("p");
-  title.innerHTML = `<span class="tick dark-tick"></span> ${feature.title}`;
-
-  // Create the description paragraph
-  const description = document.createElement("p");
-  description.textContent = feature.description;
-
-  // Append title and description to the list item
-  li.appendChild(title);
-
-  // Append the list item to the list
-  ul.appendChild(li);
-  ul.appendChild(description);
-
-  // Add a divider if it's not the last item
-  if (feature !== securityFeatures[securityFeatures.length - 1]) {
-    const divider = document.createElement("li");
-    divider.classList.add("divider");
-    ul.appendChild(divider);
-  }
-});
-
-// Append the list to the security-block container
-securityBlock.appendChild(ul);
-
 const faqListArray = [
   {
     title: "How does Autocalls work as an AI phone call platform?",
@@ -553,10 +499,17 @@ const faqList = document.createElement("ul");
 
 // Variable to keep track of the currently open description
 let openDescription = null;
+let openParentDiv = null; // To track the currently active parent div
 let openToggleButton = null;
 
 // Loop through the faqListArray to create list items dynamically
 faqListArray.forEach((feature, index) => {
+  // Create the parent div
+  const parentDiv = document.createElement("div");
+  parentDiv.style.borderRadius = "5px";
+  parentDiv.style.transition = "background-color 0.3s ease";
+  parentDiv.style.padding = "5px";
+
   // Create the list item
   const li = document.createElement("li");
   li.style.position = "relative"; // To align the icon properly
@@ -565,7 +518,8 @@ faqListArray.forEach((feature, index) => {
   // Create the title paragraph
   const title = document.createElement("p");
   title.textContent = feature.title;
-  title.style.cursor = "pointer"; // Indicate clickable title
+  title.style.cssText =
+    "background-color:#F8F8F8; padding:10px;border-radius:12px;margin:0;cursor:pointer";
   li.appendChild(title);
 
   // Create a description paragraph and hide it initially
@@ -576,7 +530,6 @@ faqListArray.forEach((feature, index) => {
   description.style.overflow = "hidden"; // Ensure no content overflows
   description.style.transition = "max-height 0.6s ease"; // Smooth open/close
   description.style.marginTop = "10px";
-  title.style.width = "90%";
 
   // Create the toggle button (plus by default)
   const toggleButton = document.createElement("span");
@@ -584,32 +537,42 @@ faqListArray.forEach((feature, index) => {
   toggleButton.style.position = "absolute";
   toggleButton.style.right = "10px";
   toggleButton.style.top = "50%";
-  toggleButton.style.color = "#C3C6C6";
   toggleButton.style.transform = "translateY(-50%)";
   toggleButton.style.cursor = "pointer";
   toggleButton.style.fontSize = "30px";
+  toggleButton.style.opacity = "0.3";
+
   const toggleDescription = () => {
     const isOpen = openDescription === description;
 
     // Close the currently open description, if any
     if (openDescription) {
       openDescription.style.maxHeight = "0";
+      openParentDiv.style.backgroundColor = ""; // Reset background color
       openToggleButton.textContent = "+";
     }
 
     if (!isOpen) {
       // Open the new description
       description.style.maxHeight = `${description.scrollHeight}px`;
-      title.style.color = "#FFFFFF";
-      toggleButton.textContent = "-";
+      title.style.color = "white";
+      title.style.backgroundColor = "transparent";
+      description.style.color = "white";
+      toggleButton.textContent = "";
+      parentDiv.style.backgroundColor = "#4caf50";
 
       // Update the references
       openDescription = description;
+      openParentDiv = parentDiv;
       openToggleButton = toggleButton;
     } else {
       // Reset the references if the same item is toggled
-      title.style.color = "#c3c6c6";
+      title.style.cssText =
+        "background-color:#F8F8F8; padding:10px;border-radius:12px;margin:0;cursor:pointer;color:black";
+
+      description.style.color = "black";
       openDescription = null;
+      openParentDiv = null;
       openToggleButton = null;
     }
   };
@@ -628,20 +591,13 @@ faqListArray.forEach((feature, index) => {
 
   // Append the toggle button and description to the list item
   li.appendChild(toggleButton);
+  li.appendChild(description);
 
-  // Append the list item to the FAQ list
-  faqList.appendChild(li);
-  faqList.appendChild(description);
+  // Append the list item to the parent div
+  parentDiv.appendChild(li);
 
-  // Add a divider if it's not the last item
-  if (index !== faqListArray.length - 1) {
-    const divider = document.createElement("hr");
-    divider.style.border = "none";
-    divider.style.height = "1px";
-    divider.style.backgroundColor = "#0A0A0A";
-    divider.style.margin = "20px 0px";
-    faqList.appendChild(divider);
-  }
+  // Append the parent div to the FAQ list
+  faqList.appendChild(parentDiv);
 });
 
 // Append the FAQ list to the FAQ block container
