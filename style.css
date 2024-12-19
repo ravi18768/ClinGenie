@@ -121,26 +121,14 @@ p {
 /* Hero Section */
 .hero-chip-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   .hero-chip-container span {
     font-size: 12px;
-  }
-}
-
-.hero-top-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .hero-top-container {
-    margin-top: 20px;
   }
 }
 
@@ -195,20 +183,52 @@ p {
 }
 
 .box1-content {
-  flex-basis: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  flex-direction: column;
-  background-color: white;
-  line-height: 84px;
+  position: relative;
 }
 
 .box1-content a {
   padding: 0 1rem;
 }
-.box1-content p {
+/* progress */
+/* left-to right */
+.loading-bar {
+  margin-left: auto;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, #33c27500, #33c275);
+  border-radius: 2px;
+  animation: slide 1.5s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.bottom-top-progress {
+  margin-right: 5px;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to top, #1a2e3500, #1a2e35);
+  border-radius: 2px;
+  animation: bottomTop 1.5s ease-in-out infinite;
+}
+
+@keyframes bottomTop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -274,10 +294,6 @@ p {
   font-weight: bold;
   color: var(--white);
   padding: 0px 10px;
-  /* this commented code is used for text gradient */
-  /* background-clip: text; */
-  /* -webkit-background-clip: text; */
-  /* color: transparent; */
 }
 
 .features {
@@ -2664,24 +2680,4 @@ textarea {
 
 #feedback-smarter {
   background-color: #fffcf8;
-}
-
-/* progress */
-
-.loading-bar {
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background: linear-gradient(to right, #33c27500, #33c275);
-  border-radius: 2px;
-  animation: slide 1.5s ease-in-out infinite;
-}
-
-@keyframes slide {
-  0% {
-    left: -50px;
-  }
-  100% {
-    left: 100%;
-  }
 }
