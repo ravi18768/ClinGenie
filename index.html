@@ -21,32 +21,34 @@
         <nav class="header-container">
             <div class="listContainer">
                 <img src="./assets/images/mainLogo.svg" alt="ClinGenie" class="mainLogo" />
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#pricing">Price</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="tabs">
+                    <li class="tab"><a href="#">Home</a></li>
+                    <li class="tab"><a href="#">Blog</a></li>
+                    <li class="tab"><a href="#pricing">Price</a></li>
+                    <li class="tab"><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="menuDiv">
-                <a href="#" class="signin">Sign In</a>
-                <button class="btn bt2">Book a Demo</button>
-                <button id="showButton" class="hamburger-menu" aria-label="Toggle navigation">
+            <div>
+                <div class="right-header-container">
+                    <a href="#" class="signin">Sign In</a>
+                    <button class="button"><span>Book a Demo</span></button>
+                </div>
+                <button id="showButton" class="hamburger-menu">
                     ☰
                 </button>
             </div>
         </nav>
         <div>
-            <div id="targetDiv" class="hidden fade-in">
+            <div id="targetDiv" class="hidden">
                 <div class="hideMenu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Price</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li> <a href="#" class="signin-drawer">Sign In</a></li>
-                        <li class="demo-btn-drawer"> <button class="btn-drawer">Book a
-                                Demo</button></li>
+                        <li><a href="#" class="tab">Home</a></li>
+                        <li><a href="#" class="tab">Blog</a></li>
+                        <li><a href="#pricing" class="tab">Price</a></li>
+                        <li><a href="#contact" class="tab">Contact</a></li>
+                        <li class="demo-btn-drawer"><a href="#" class="signin-drawer">Sign In</a> <button
+                                class="button"><span>Book a
+                                    Demo</span></button></li>
                     </ul>
                 </div>
             </div>
@@ -116,8 +118,8 @@
             </div>
         </section>
 
-        <section class="max-container">
-            <div class="section-2">
+        <section class="section-2">
+            <div class="max-container">
                 <h1>Transforming Clinical Trial Recruitment with Real Results</h1>
                 <p class="sub-text">Achieve faster, more efficient, and scalable patient recruitment with AI-powered
                     automation.</p>
@@ -784,12 +786,8 @@
         <section id="contact" class="contact-us">
             <div class="contact-container max-container">
                 <div class="left-section">
-                    <h1>Voice AI is the future - Make it yours</h1>
-                    <p>
-                        Voice AI is revolutionizing how businesses communicate. Stay ahead of the curve by automating
-                        your calls and
-                        enhancing efficiency today.
-                    </p>
+                    <h1>Ready to Transform Your Clinical Trials?</h1>
+
                     <div class="contact-info">
                         <div class="info-field-wrapper">
                             <div class="info-img-bg">
@@ -800,49 +798,18 @@
                                 <strong> info@xyz.com</strong>
                             </div>
                         </div>
-                        <div class="info-field-wrapper">
-                            <div class="info-img-bg">
-                                <img src="/assets/images/mi_call.png" alt="phone" />
-                            </div>
-                            <div>
-                                <p class="label">Phone Number for UK:</p>
-                                <strong>+44 (555) 555-1234</strong>
-                            </div>
-                        </div>
-                        <div class="info-field-wrapper">
-                            <div class="info-img-bg">
-                                <img src="/assets/images/mi_call.png" alt="phone" />
-                            </div>
-                            <div>
-                                <p class="label">Phone Number for USA:</p>
-                                <strong>+1 (555) 555-1234</strong>
-                            </div>
-                        </div>
                     </div>
                     <p class="note">✔ Get your AI ready in 60 seconds</p>
                 </div>
                 <div class="right-section">
-                    <h2>Request A Demo — let’s work together.</h2>
-                    <p>
-                        Unlock the potential of seamless communication and enhanced efficiency. Complete the form, and
-                        our team will
-                        be in touch with you promptly.
-                    </p>
+                    <h2>Book your personalized demo today</h2>
                     <form>
                         <div class="column-group">
                             <div class="form-group1">
                                 <label for="name">Name <span class="red-asterisk">*</span></label>
                                 <input type="text" id="name" name="name" placeholder="Full name" required>
                             </div>
-                            <div class="form-group1">
-                                <label for="industry">Industry</label>
-                                <select id="industry" name="industry">
-                                    <option value="" disabled selected>Select Industry</option>
-                                    <option value="tech">Tech</option>
-                                    <option value="healthcare">Healthcare</option>
-                                    <option value="finance">Finance</option>
-                                </select>
-                            </div>
+
                         </div>
                         <div class="form-group1">
                             <label for="email">Email <span class="red-asterisk">*</span></label>
