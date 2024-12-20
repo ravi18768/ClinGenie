@@ -367,12 +367,12 @@ function renderSlider() {
                                 <span>▶</span>
                             </button>
                         </div>
-                       </div>
+                      </div>
                     <div class="details">
                             <h2>${item?.name}</h2>
                             <p>${item?.description}</p>
                         </div>
-                   `;
+                  `;
     slider.appendChild(slide);
 
     //audio wave
@@ -391,7 +391,7 @@ renderSlider();
 const outCallElements = document.querySelectorAll(".outCall");
 // Add click event listener to each element
 outCallElements.forEach((outCall) => {
-  outCall.addEventListener("click", function () {
+  outCall.addEventListener("mouseenter", function () {
     // Remove the 'active' class from all elements
     outCallElements.forEach((el) => {
       el.classList.remove("active");
