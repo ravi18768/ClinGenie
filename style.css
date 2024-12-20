@@ -561,7 +561,9 @@ footer {
 }
 .footer-column {
   list-style: none;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 .footer-divider {
   border-color: var(--footer-divider-color);
@@ -1615,7 +1617,7 @@ footer {
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
+  gap: 1.5rem;
   padding: 30px;
 }
 
@@ -1726,6 +1728,8 @@ footer {
   border: 1px solid #33c275;
   font-size: 16px;
   margin-top: 20px;
+  font-family: var(--font-family-secondary);
+  font-weight: 400;
 }
 
 .pricing-card:hover h4,

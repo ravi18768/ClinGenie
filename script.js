@@ -795,3 +795,126 @@ var animation = lottie.loadAnimation({
   autoplay: true,
   path: "./assets/lottie/arrow.json", // Replace with the correct path to the Lottie JSON file
 });
+
+const pricingData = [
+  {
+    title: "Lite",
+    price: "$99",
+    time: "Month",
+    description:
+      "Upgrade your social portfolio with a stunning profile & enhanced shots.",
+    features: [
+      "Create 1 Voice Agent",
+      "400 minutes every month",
+      "1 Team Member",
+      "6 Basic Voices",
+      "Inbound and Outbound Agents",
+      "Call Recording and Transcription",
+      "Automated SMS Sending",
+      "Voicemail detection",
+      "Customer Sentiment Analysis",
+    ],
+    buttonText: "Get started with Lite →",
+  },
+  {
+    title: "Essential",
+    price: "$1,999",
+    time: "Month",
+    description:
+      "Upgrade your social portfolio with a stunning profile & enhanced shots.",
+    features: [
+      "Create 1 Voice Agent",
+      "10,000 minutes every month",
+      "2 Team Member",
+      "6 Basic Voices",
+      "Inbound and Outbound Agents",
+      "Call Recording and Transcription",
+      "Automated SMS Sending",
+      "Voicemail detection",
+      "Customer Sentiment Analysis",
+    ],
+    buttonText: "Get started with Essential →",
+  },
+  {
+    title: "Growth",
+    price: "$4,999",
+    time: "Month",
+    description:
+      "Upgrade your social portfolio with a stunning profile & enhanced shots.",
+    features: [
+      "Create 1 Voice Agent",
+      "25,000 minutes every month",
+      "2 Team Member",
+      "6 Basic Voices",
+      "Inbound and Outbound Agents",
+      "Call Recording and Transcription",
+      "Automated SMS Sending",
+      "Voicemail detection",
+      "Customer Sentiment Analysis",
+    ],
+    buttonText: "Get started with Growth →",
+    highlighted: true,
+  },
+  {
+    title: "Enterprise",
+    price: "",
+    description:
+      "Upgrade your social portfolio with a stunning profile & enhanced shots.",
+    features: [
+      "Create No limit Voice Agent",
+      "No limits minutes every month",
+      "No limits Team Member",
+      "6 Basic Voices",
+      "Inbound and Outbound Agents",
+      "Call Recording and Transcription",
+      "Call Recording and Transcription",
+      "Call Recording and Transcription",
+      "Call Recording and Transcription",
+    ],
+    buttonText: "Contact Sales →",
+  },
+];
+
+function renderPricingCards() {
+  pricingData.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "pricing-card";
+
+    const h4 = document.createElement("h4");
+    h4.textContent = item.title;
+
+    const priceDiv = document.createElement("div");
+    priceDiv.className = "price";
+    priceDiv.textContent = item.price ? item.price : "Custom";
+
+    const priceSpan = document.createElement("span");
+    priceSpan.textContent = item.time ? ` /per ${item.time}` : "";
+
+    priceDiv.appendChild(priceSpan);
+
+    const desPara = document.createElement("p");
+    desPara.textContent = item.description;
+
+    const ul = document.createElement("ul");
+
+    item.features.forEach((data, index) => {
+      const li = document.createElement("li");
+      li.textContent = data;
+      ul.appendChild(li);
+    });
+
+    const btn = document.createElement("button");
+    btn.className = "price-btn";
+    btn.textContent = item.buttonText;
+
+    card.appendChild(h4);
+    card.appendChild(priceDiv);
+    card.appendChild(desPara);
+    card.appendChild(ul);
+    card.appendChild(btn);
+
+    const priceGrid = document.getElementById("price-main-grid");
+    priceGrid.appendChild(card);
+  });
+}
+renderPricingCards();
