@@ -298,13 +298,13 @@ function initializeWaveSurfer(
   // Create a new WaveSurfer instance
   const wavesurfer = WaveSurfer.create({
     container: `#${container}`,
-    waveColor: "#fff",
-    progressColor: "#33c275",
+    waveColor: "#D9D9D9",
+    progressColor: "#242731",
     back: "#000",
     barWidth: 2,
-    barGap: 5,
+    barGap: 3,
     barRadius: 2,
-    barHeight: 0.6,
+    barHeight: 0.4,
     responsive: true,
     url: item?.audio,
     peaks: [randomNumbers], // Add peaks to waveform
@@ -358,20 +358,21 @@ function renderSlider() {
     const slide = document.createElement("div");
     slide.classList.add("voice-card");
     slide.innerHTML = `<div class="profile">
-                        <img src=${item?.profile_pic} alt="profile" />
-                        <div class="details">
-                            <h2>${item?.name}</h2>
-                            <p>${item?.description}</p>
-                        </div>
-                    </div>
-                    <div class="audio-wave">
-                        <div id="waveform${index}" style="width:100%"></div>
-                        <div class="play">
+                          <img src=${item?.profile_pic} alt="profile" />
+                          <div class="audio-wave">
+                          <div id="waveform${index}" style="width:100%"></div>
+                          </div>
+                          <div class="play">
                             <button class="play-btn" id="playButton${index}">
                                 <span>▶</span>
                             </button>
                         </div>
-                    </div>`;
+                       </div>
+                    <div class="details">
+                            <h2>${item?.name}</h2>
+                            <p>${item?.description}</p>
+                        </div>
+                   `;
     slider.appendChild(slide);
 
     //audio wave
@@ -925,7 +926,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayImage = document.getElementById("display-image");
 
   // Set the default image
-  displayImage.src = "./assets/images/agent-setup.svg";
+  displayImage.src = "./assets/images/three/image1.svg";
 
   menuItems.forEach((item) => {
     item.addEventListener("mouseover", () => {
