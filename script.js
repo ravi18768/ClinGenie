@@ -934,3 +934,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = [
+    { id: "#import-leads", animation: "slide-in-right" },
+    { id: "#pre-screening", animation: "slide-in-left" },
+    { id: "#booking-appointment", animation: "slide-in-right" },
+    { id: "#automate-engagement", animation: "slide-in-left" },
+    { id: "#post-call", animation: "slide-in-right" },
+    { id: "#analytics-reports", animation: "slide-in-left" },
+  ];
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const animation = entry.target.getAttribute("data-animation");
+        entry.target.classList.remove("hidden");
+        entry.target.classList.add(animation);
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  elements.forEach(({ id, animation }) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.setAttribute("data-animation", animation);
+      observer.observe(element);
+    }
+  });
+});

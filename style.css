@@ -2968,3 +2968,31 @@ textarea {
 .demo-btn-div {
   margin-top: 50px;
 }
+
+.slide-in-left {
+  transform: translateX(-100%);
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  transform: translateX(100%);
+  animation: slideInRight 1.5s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
