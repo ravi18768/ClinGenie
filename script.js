@@ -918,3 +918,19 @@ function renderPricingCards() {
   });
 }
 renderPricingCards();
+
+// new ai agents image dynamic
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll(".menu-item");
+  const displayImage = document.getElementById("display-image");
+
+  // Set the default image
+  displayImage.src = "./assets/images/agent-setup.svg";
+
+  menuItems.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      const image = item.getAttribute("data-image");
+      displayImage.src = `${image}`;
+    });
+  });
+});

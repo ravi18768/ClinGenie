@@ -66,6 +66,7 @@ h1 {
   font-family: var(--font-family-primary);
   font-weight: 700;
   font-size: 60px;
+  text-align: center;
 }
 h2 {
   color: #242731;
@@ -89,10 +90,10 @@ h3 {
   font-size: 30px;
 }
 h4 {
-  line-height: 55px;
-  font-family: var(--title-font-family);
-  font-weight: 700;
-  font-size: 22px;
+  line-height: 32px;
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+  font-size: 24px;
   color: #0a0a0a;
 }
 label {
@@ -242,9 +243,6 @@ p {
 @media (max-width: 768px) {
   .box1-content p {
     font-size: 16px;
-  }
-  .small-device-hide {
-    visibility: hidden;
   }
 }
 
@@ -513,9 +511,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* ai audio section */
-.ai-audio-section {
-  background-color: var(--secondary-color);
-}
 .ai-audio-section .chip {
   background-color: var(--white);
   border-radius: var(--chip-border-radius);
@@ -1970,64 +1965,13 @@ textarea {
   }
 }
 
-.sec-faq-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 5% !important;
-  justify-content: space-between;
-}
-
-@media (max-width: 900px) {
-  .sec-faq-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  }
-}
-
 .faq {
   flex: 1;
-}
-.security-icon {
-  display: flex;
-  align-items: center;
-}
-.security div img {
-  width: 40px;
-  height: 40px;
-}
-
-.security p {
-  color: #5c6060;
-  font-size: 16px;
-  line-height: 24px;
-  margin: 20px 0 20px;
-  font-weight: 400;
-  font-family: var(--font-family-primary);
-}
-
-.security-block {
-  border: 1px solid #0a0a0a;
-  border-radius: 16px;
-  padding: 20px 30px;
   display: flex;
   flex-direction: column;
-  background-color: var(--white);
+  align-items: center;
+  justify-content: center;
 }
-.security-block ul {
-  list-style-type: none;
-}
-.security-block ul li p {
-  font-size: 26px;
-  font-family: var(--title-font-family);
-  font-weight: 700;
-  color: var(--h1-color);
-}
-.security-block ul p {
-  font-size: 16px;
-  font-family: var(--font-family-primary);
-  color: #79767f;
-  font-weight: 400;
-}
-
 .divider {
   width: 100%; /* Full width of the container */
   height: 0.5px; /* Height of the line */
@@ -2036,18 +1980,18 @@ textarea {
   opacity: 0.8;
 }
 
-.faq div img {
-  width: 40px;
-  height: 40px;
-}
-
 .faq-block {
   /* background-color: var(--black); */
   border-radius: 16px;
   margin-top: 10px;
   padding: 30px 20px;
+  max-width: 80%;
 }
-
+@media (max-width: 900px) {
+  .faq-block {
+    max-width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .faq-block {
     padding: 5px 0px;
@@ -2256,10 +2200,11 @@ textarea {
 }
 
 .endlessDivTwo {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
   padding-bottom: 70px;
 }
 
@@ -2339,6 +2284,11 @@ textarea {
   transition: opacity 0.3s ease;
   border-width: 1px solid black;
   width: 100%;
+}
+@media (max-width: 900px) {
+  .endlessDivTwo {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
 }
 @media (max-width: 768px) {
   .tab-content {
@@ -2501,6 +2451,63 @@ textarea {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* new agent ai section */
+.new-ai-agents p {
+  margin-top: 30px;
+}
+.agents-container {
+  display: flex;
+  align-items: stretch; /* Ensure both sections stretch to the same height */
+  gap: 20px; /* Optional: Add space between sections */
+  width: 100%;
+  margin-top: 30px;
+}
+
+.agents-left-section,
+.agents-right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  box-shadow: 1px 0 0 0.5px var(--secondary) inset;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: var(--primary);
+}
+.menu-item:hover .child {
+  color: var(--white);
+}
+.menu-item p {
+  font-family: var(--font-family-primary);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--h1-color);
+}
+.agents-right-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .agents-container {
+    flex-direction: column;
   }
 }
 
