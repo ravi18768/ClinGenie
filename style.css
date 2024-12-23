@@ -1304,11 +1304,12 @@ footer {
 
 .calendar {
   border-radius: 16px;
-  width: 70%;
+  flex: 1;
 }
 .calendar img {
   object-fit: contain;
   width: 100%;
+  height: 100%;
 }
 
 .calendar-header h3 {
