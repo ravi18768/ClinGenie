@@ -19,6 +19,12 @@ nav {
   padding: 20px 0px;
 }
 
+@media (max-width: 900px) {
+  .header-container {
+    max-width: 90vw;
+  }
+}
+
 .listContainer {
   display: flex;
   align-items: center;
