@@ -298,11 +298,11 @@ function initializeWaveSurfer(
     container: `#${container}`,
     waveColor: "#D9D9D9",
     progressColor: "#242731",
-    back: "#000",
+    cursorWidth: 0,
     barWidth: 2,
     barGap: 3,
     barRadius: 2,
-    barHeight: 0.4,
+    barHeight: 0.3,
     responsive: true,
     url: item?.audio,
     peaks: [randomNumbers], // Add peaks to waveform
@@ -310,6 +310,9 @@ function initializeWaveSurfer(
 
   // Add event listener to play/pause button
   playButton.addEventListener("click", () => {
+    const playIcon = "./assets/images/play.svg"; // Path to your play icon image
+    const pauseIcon = "./assets/images/pause.svg"; // Path to your pause icon image
+
     // Pause any currently playing audio
     if (
       currentPlayingState.currentPlaying &&
@@ -317,33 +320,31 @@ function initializeWaveSurfer(
     ) {
       currentPlayingState.currentPlaying.pause();
       document
-        .querySelector(".play-btn span.playing")
-        ?.classList.replace("playing", "paused");
-      playButton.querySelector("span").textContent = "▶";
-      playButton.querySelector("span").style.cssText = "font-size:20px";
+        .querySelector(".play-btn img.playing")
+        ?.classList.remove("playing");
+      document
+        .querySelector(".play-btn img.paused")
+        ?.classList.remove("paused");
+      playButton.querySelector("img").src = playIcon; // Set to play icon
     }
 
     // Toggle play/pause for this instance
     isPlaying ? wavesurfer.pause() : wavesurfer.play();
-    playButton.querySelector("span").textContent = isPlaying ? "▶" : "⏸";
-    playButton.querySelector("span").style.cssText = isPlaying
-      ? "font-size:20px"
-      : "font-size:34px";
+    playButton.querySelector("img").src = isPlaying ? playIcon : pauseIcon; // Set appropriate icon
     isPlaying = !isPlaying;
     currentPlayingState.currentPlaying = wavesurfer;
     currentPlayingState.currentButton = null;
   });
 
   wavesurfer.on("pause", () => {
-    playButton.querySelector("span").textContent = "▶";
-    playButton.querySelector("span").style.cssText = "font-size:20px";
-    isPlaying = false;
+    const playIcon = "./assets/images/play.svg"; // Path to your play icon image
+    playButton.querySelector("img").src = playIcon; // Set to play icon
   });
 
   // Reset state when playback finishes
   wavesurfer.on("finish", () => {
-    playButton.querySelector("span").textContent = "▶";
-    playButton.querySelector("span").style.cssText = "font-size:26px";
+    const playIcon = "./assets/images/play.svg"; // Path to your play icon image
+    playButton.querySelector("img").src = playIcon; // Set to play icon;
     isPlaying = false;
   });
 }
@@ -356,13 +357,13 @@ function renderSlider() {
     const slide = document.createElement("div");
     slide.classList.add("voice-card");
     slide.innerHTML = `<div class="profile">
-                          <img src=${item?.profile_pic} alt="profile" />
+                          <img src=${item?.profile_pic} alt="profile" class="pro-img"/>
                           <div class="audio-wave">
                           <div id="waveform${index}" style="width:100%"></div>
                           </div>
                           <div class="play">
                             <button class="play-btn" id="playButton${index}">
-                                <span>▶</span>
+                                <img src="./assets/images/play.svg" alt="Play" class="play-pause-img"/>
                             </button>
                         </div>
                       </div>

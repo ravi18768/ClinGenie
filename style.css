@@ -109,18 +109,13 @@ p {
   font-weight: 400;
 }
 .mainLogo {
-  width: 11rem;
   height: 2.5rem;
-  position: relative;
-  left: -20px;
 }
 
 @media (max-width: 500px) {
   .mainLogo {
     max-width: 8rem;
     height: 2.5rem;
-    position: relative;
-    left: 0px;
   }
 }
 
@@ -144,11 +139,12 @@ p {
   line-height: 25px;
   display: flex;
   align-items: center;
-  padding: 5px 15px;
+  padding: 10px 15px 10px 15px;
   background-color: var(--bg-green);
   border-radius: 50px;
   font-family: var(--font-family-primary);
   color: var(--secondary);
+  margin-bottom: 30px;
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
@@ -165,13 +161,12 @@ p {
 .chip {
   background-color: var(--secondary);
   color: white;
-  padding: 6px 15px;
+  padding: 2px 15px 0px 15px;
   border-radius: 20px;
   font-family: var(--font-family-primary);
   font-weight: 700;
   font-size: 12px;
   text-align: center;
-  line-height: 16px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
 }
@@ -313,10 +308,10 @@ p {
 .features {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 @media (min-width: 200px) and (max-width: 600px) {
   .features {
@@ -986,16 +981,16 @@ footer {
   }
 }
 
+#audio-section {
+  background-color: #fffcf8;
+}
 .voice-container {
   text-align: center;
-  padding-top: 40px;
 }
 .voice-container h1 {
-  margin-top: 40px;
   line-height: 66px;
 }
 .voice-container p {
-  width: 40%;
   margin: 3rem auto;
 }
 
@@ -1039,9 +1034,8 @@ footer {
 
 .voice-card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px; /* Space between the cards */
-  max-width: 90vw;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Space between the cards */
   margin: 5rem auto 0;
 }
 
@@ -1054,14 +1048,12 @@ footer {
 @media (max-width: 1200px) {
   .voice-card-container {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 95vw;
   }
 }
 
 @media (max-width: 900px) {
   .voice-card-container {
     grid-template-columns: 1fr;
-    max-width: 70vw;
   }
 }
 
@@ -1072,32 +1064,32 @@ footer {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 11.26px 25px #061c3d1f;
+  background-color: var(--white);
 }
 
 .profile {
   display: flex;
   align-items: center;
   justify-content: start;
-  margin-bottom: 10px;
   gap: 20px;
 }
-.profile img {
+.pro-img {
   width: 65px;
   height: 65px;
   border-radius: 4px;
 }
 
 .details h2 {
-  font-size: 20px;
+  font-size: 16px;
   text-align: left;
-  line-height: 16px;
+  line-height: 24px;
+  font-family: var(--font-family-primary);
 }
 .details p {
   width: 100%;
-  font-size: 14px;
+  font-size: 12px;
   color: #575f6e;
   margin: 0;
-  margin-top: 10px;
   font-family: var(--font-family-primary);
   font-weight: 400;
   line-height: 16px;
@@ -1135,6 +1127,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  height: 100px;
+  margin-top: -20px;
 }
 
 .play {
@@ -1149,11 +1143,11 @@ footer {
   border: none;
   color: var(--secondary);
   border-radius: 50%;
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 0 10px 8px var(--secondary); /* Elevated shadow on hover */
+  box-shadow: 0 0 20px 8px var(--secondary); /* Elevated shadow on hover */
 }
 
 .play-btn:hover {
@@ -1194,6 +1188,11 @@ footer {
   line-height: 30px;
   text-align: center;
   color: #414141;
+}
+
+.play-pause-img {
+  width: 20px;
+  height: 20px;
 }
 
 /* audio slider style */
@@ -1329,6 +1328,10 @@ footer {
 
 .patient-recruitment h1 {
   margin: 20px 0;
+}
+
+.custom-support-container {
+  position: relative;
 }
 
 .appointment-section {
@@ -1650,8 +1653,8 @@ footer {
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 30px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
 @media (max-width: 400px) {
@@ -1795,7 +1798,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
   gap: 20px;
-  padding: 20px;
+  align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -1805,7 +1808,7 @@ footer {
 }
 
 .left-section {
-  padding: 40px;
+  /* padding: 40px; */
 }
 
 @media (max-width: 900px) {
@@ -2066,10 +2069,10 @@ textarea {
 /* common style classes */
 .max-container {
   margin: 0 auto;
-  padding: 8rem 0;
+  padding: 7rem 0;
   gap: 20px;
   position: relative;
-  max-width: 1600px;
+  max-width: 80vw;
 }
 .start-pattern {
   position: absolute;
@@ -2085,9 +2088,12 @@ textarea {
   padding: 60px 0;
   gap: 20px;
   position: relative;
-  max-width: 1600px;
+  max-width: 80vw;
 }
 
+.section-2 h1 {
+  font-size: 50px;
+}
 .section-2 h1,
 .section-2 p {
   color: var(--white);
@@ -2095,6 +2101,7 @@ textarea {
 }
 .section-2 p {
   margin-top: 20px;
+  font-weight: 500;
 }
 
 .grid {
@@ -2124,15 +2131,20 @@ textarea {
   .max-container {
     padding: 30px 20px;
   }
+  .header-container {
+    padding: 20px;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1500px) {
   .max-container {
     padding: 60px 30px;
   }
+  .header-container {
+    padding: 20px 30px;
+  }
 }
-
-.max-container-revolutionary {
+/* .max-container-revolutionary {
   max-width: 1500px;
   margin: 0 auto;
   padding: 60px 0px;
@@ -2143,7 +2155,7 @@ textarea {
   .max-container-revolutionary {
     padding: 30px 30px;
   }
-}
+} */
 @media (min-width: 600px) and (max-width: 1500px) {
   .max-container-ai-voice-agents {
     padding: 60px 30px;
@@ -2152,7 +2164,6 @@ textarea {
 
 .highlightText {
   color: var(--secondary);
-  padding: 0px 10px; /* Only horizontal padding */
   line-height: 1;
   display: inline-block;
   font-weight: 700;
@@ -3042,8 +3053,15 @@ textarea {
 .sub-title-existing {
   font-weight: 700;
   font-size: 42px;
-  line-height: 50px;
+  line-height: 68px;
   width: 80%;
+}
+
+@media (max-width: 768px) {
+  .sub-title-existing {
+    font-size: 25px;
+    line-height: 40px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -3051,13 +3069,6 @@ textarea {
     font-size: 35px;
     line-height: 40px;
     width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .sub-title-existing {
-    font-size: 25px;
-    line-height: 40px;
   }
 }
 
