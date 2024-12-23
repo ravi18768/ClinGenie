@@ -25,6 +25,12 @@ nav {
   }
 }
 
+@media (max-width: 900px) {
+  .header-container {
+    max-width: 100vw;
+  }
+}
+
 .listContainer {
   display: flex;
   align-items: center;

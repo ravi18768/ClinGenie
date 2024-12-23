@@ -2078,6 +2078,12 @@ textarea {
   position: absolute;
 }
 
+@media (max-width: 400px) {
+  .max-container {
+    max-width: 90vw;
+  }
+}
+
 .section-2 {
   background: url("/assets/images/BG.svg");
   padding: 60px 0 120px;
