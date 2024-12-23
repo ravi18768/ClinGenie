@@ -3044,3 +3044,37 @@ textarea {
     transform: translateX(0);
   }
 }
+
+/* phone input */
+/* Customizing the container */
+.iti {
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Change the style of the input field */
+#phone {
+  border-left: 1px solid #e6e8ec;
+}
+/* Customize the flag's size */
+.iti__flag {
+  width: 40px;
+  height: 40px;
+}
+
+/* Customizing the dropdown menu */
+.iti__dropdown {
+  background-color: #f8f8f8;
+  max-height: 200px; /* Limit the height of the dropdown */
+}
+
+/* Change the country code and name styling */
+.iti__country {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Style the dial code input */
+.iti__input {
+  font-weight: bold;
+}

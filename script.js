@@ -665,7 +665,7 @@ function populateCustomDropdown(countries) {
   countries.forEach((country) => {
     const option = document.createElement("option");
     option.value = country.code;
-    option.innerHTML = `${country.flag} ${country.name}`;
+    option.innerHTML = `${country.flag}`;
     countrySelect.appendChild(option);
   });
 
@@ -1006,3 +1006,10 @@ function populateAboutCards(data) {
     aboutContainer.appendChild(container);
   });
 }
+
+const input = document.querySelector("#phone");
+const iti = window.intlTelInput(input, {
+  initialCountry: "us", // Default country
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // For number formatting
+});
