@@ -2222,7 +2222,7 @@ textarea {
 
 .endlessDivTwo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -2239,13 +2239,13 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
-.outCall.active {
+.outCall.inCall {
   background-color: var(--secondary); /* Change background to green */
   color: var(--white); /* Adjust text color for better contrast */
 }
 
-.outCall.active h2,
-.outCall.active p {
+.outCall.inCall h2,
+.outCall.inCall p {
   color: white; /* Ensure h2 and p tags have white text */
 }
 .outCall img {
@@ -2275,6 +2275,9 @@ textarea {
   padding: 15px;
   transition: border-color 0.3s ease;
 }
+.outCall-details.inCall div {
+  border: 1px solid var(--black);
+}
 .outCall-details img {
   border: 2px solid #939393;
   padding: 10px;
@@ -2302,10 +2305,16 @@ textarea {
 
 .tab-content {
   gap: 20px;
-  transition: opacity 0.3s ease;
   border-width: 1px solid black;
   width: 100%;
 }
+
+@media (max-width: 1500px) {
+  .max-container {
+    padding: 60px 0;
+  }
+}
+
 @media (max-width: 900px) {
   .endlessDivTwo {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));

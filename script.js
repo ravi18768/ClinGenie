@@ -385,37 +385,6 @@ function renderSlider() {
 }
 renderSlider();
 
-//out-call-and-in-call-toggle
-const outCallElements = document.querySelectorAll(".outCall");
-// Add click event listener to each element
-outCallElements.forEach((outCall) => {
-  outCall.addEventListener("mouseenter", function () {
-    // Remove the 'active' class from all elements
-    outCallElements.forEach((el) => {
-      el.classList.remove("active");
-      const details = el.nextElementSibling;
-      if (details && details.classList.contains("outCall-details")) {
-        details.querySelectorAll("div").forEach((item) => {
-          item.style.borderColor = ""; // Reset border color
-        });
-      }
-    });
-
-    // Toggle the 'active' class on the clicked element
-    this.classList.toggle("active");
-
-    // Change border color of the sibling '.outCall-details' items
-    const details = this.nextElementSibling;
-    if (details && details.classList.contains("outCall-details")) {
-      details.querySelectorAll("div").forEach((item) => {
-        item.style.borderColor = this.classList.contains("active")
-          ? "green"
-          : ""; // Change border
-      });
-    }
-  });
-});
-
 // toggle option
 const toggleOptions = document.querySelectorAll(".toggle-option");
 toggleOptions.forEach((option) => {
