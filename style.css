@@ -253,6 +253,9 @@ p {
   border-width: 0;
   transition: 0.3s;
   font-family: var(--font-family-primary);
+  font-weight: 500 !important;
+  font-size: 22px;
+  line-height: 25px;
 }
 
 .btn:hover {
@@ -484,13 +487,6 @@ input::-webkit-inner-spin-button {
   left: 20px;
   width: 20px;
   height: 20px;
-}
-
-.form-container button {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  margin-top: 10px;
 }
 
 /* Responsive styles */
@@ -1918,6 +1914,13 @@ footer {
   color: #061c3d;
   font-size: 24px;
   line-height: 32px;
+}
+.right-section .btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700 !important;
+  font-size: 16px;
 }
 
 @media (max-width: 600px) {
