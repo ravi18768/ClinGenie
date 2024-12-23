@@ -2077,16 +2077,24 @@ textarea {
   font-size: 16px;
 }
 
+@media (max-width: 1500px) {
+  .max-container {
+    padding: 60px 0;
+  }
+}
+
 @media (min-width: 300px) and (max-width: 600px) {
   .max-container {
     padding: 30px 20px;
   }
 }
+
 @media (min-width: 600px) and (max-width: 1500px) {
   .max-container {
     padding: 60px 30px;
   }
 }
+
 .max-container-revolutionary {
   max-width: 1500px;
   margin: 0 auto;
@@ -2307,12 +2315,6 @@ textarea {
   gap: 20px;
   border-width: 1px solid black;
   width: 100%;
-}
-
-@media (max-width: 1500px) {
-  .max-container {
-    padding: 60px 0;
-  }
 }
 
 @media (max-width: 900px) {
