@@ -144,10 +144,10 @@ const languages = [
 // Array of random texts for the button
 const randomTexts = [
   "Better trial outcomes",
-  "Better trial outcomes",
-  "Better trial outcomes",
-  "Better trial outcomes",
-  "Better trial outcomes",
+  "Reduce recruitment cost",
+  "Faster patient enrollment",
+  "Increase show-up rate",
+  "Automate patient engagement",
 ];
 
 // Array of random gradient colors
@@ -256,17 +256,16 @@ function typewriterEffect(element, text, delay, callback) {
 }
 
 // Function to update the text content randomly after previous typing is done
+let randomIndex = 0;
 function updateRandomText() {
-  const randomIndex = Math.floor(Math.random() * randomTexts.length);
-  const randomGradient =
-    gradientColors[Math.floor(Math.random() * gradientColors.length)];
+  // const randomIndex = Math.floor(Math.random() * randomTexts.length);
+  // const randomGradient =
+  //   gradientColors[Math.floor(Math.random() * gradientColors.length)];
   const newText = randomTexts[randomIndex];
+  randomIndex = randomTexts.length - 1 != randomIndex ? randomIndex + 1 : 0;
   const btn1Element = document.querySelector(".random-text");
 
-  // Apply random gradient as text color
-  // btn1Element.style.backgroundImage = randomGradient;
-
-  typewriterEffect(btn1Element, newText, 20, function () {
+  typewriterEffect(btn1Element, newText, 30, function () {
     setTimeout(updateRandomText, 2000); // Wait 2 seconds before next text
   });
 }
@@ -275,7 +274,6 @@ function updateRandomText() {
 updateRandomText();
 
 // audio player
-
 const currentPlayingState = {
   currentPlaying: null,
   currentButton: null,
@@ -936,32 +934,75 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const elements = [
-//     { id: "#import-leads", animation: "slide-in-right" },
-//     { id: "#pre-screening", animation: "slide-in-left" },
-//     { id: "#booking-appointment", animation: "slide-in-right" },
-//     { id: "#automate-engagement", animation: "slide-in-left" },
-//     { id: "#post-call", animation: "slide-in-right" },
-//     { id: "#analytics-reports", animation: "slide-in-left" },
-//   ];
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = [
+    { id: "#import-leads", animation: "slide-in-right" },
+    { id: "#pre-screening", animation: "slide-in-left" },
+    { id: "#booking-appointment", animation: "slide-in-right" },
+    { id: "#automate-engagement", animation: "slide-in-left" },
+    { id: "#post-call", animation: "slide-in-right" },
+    { id: "#analytics-reports", animation: "slide-in-left" },
+  ];
 
-//   const observer = new IntersectionObserver((entries, observer) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         const animation = entry.target.getAttribute("data-animation");
-//         entry.target.classList.remove("hidden");
-//         entry.target.classList.add(animation);
-//         observer.unobserve(entry.target);
-//       }
-//     });
-//   });
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const animation = entry.target.getAttribute("data-animation");
+        entry.target.classList.remove("hidden");
+        entry.target.classList.add(animation);
+        observer.unobserve(entry.target);
+      }
+    });
+  });
 
-//   elements.forEach(({ id, animation }) => {
-//     const element = document.querySelector(id);
-//     if (element) {
-//       element.setAttribute("data-animation", animation);
-//       observer.observe(element);
-//     }
-//   });
-// });
+  elements.forEach(({ id, animation }) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.setAttribute("data-animation", animation);
+      observer.observe(element);
+    }
+  });
+});
+
+// List of countries with their flag emojis
+fetch("./assets/JSON/aboutCardData.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    populateAboutCards(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching the country data:", error);
+  });
+
+function populateAboutCards(data) {
+  // Target container
+  const aboutContainer = document.querySelector(".about-container");
+
+  // Generate cards dynamically
+  data.forEach((card, index) => {
+    const aboutCard = document.createElement("div");
+    aboutCard.classList.add("about-card");
+    // Set background color based on odd/even index
+    aboutCard.style.backgroundColor = index % 2 === 0 ? "#FFFCF8" : "#F7F8FC";
+    aboutCard.innerHTML = `
+          <img src="${card.imgSrc}" alt="${card.altText}" class="about-img" />
+          <p class="about-header">${card.header}</p>
+          <div class="stars">${card.stars}</div>
+          <div>
+              <p class="about-description">
+                  <strong>${card.descriptionHeader}</strong>
+                  ${card.description}
+              </p>
+          </div>
+      `;
+
+    const container = document.createElement("div");
+    container.appendChild(aboutCard);
+    aboutContainer.appendChild(container);
+  });
+}

@@ -1,5 +1,6 @@
 @import "./buttons.css";
 @import "./header.css";
+@import "./about.css";
 @font-face {
   font-family: "LufgaRegular";
   src: url("assets/fonts/LufgaRegular.ttf") format("truetype");
