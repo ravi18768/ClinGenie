@@ -254,6 +254,7 @@ p {
   border-radius: 8px;
   border-width: 0;
   transition: 0.3s;
+  font-family: var(--font-family-primary);
 }
 
 .btn:hover {
@@ -1296,14 +1297,14 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10%;
+  gap: 7%;
   text-align: start;
   justify-content: center;
 }
 
 .calendar {
   border-radius: 16px;
-  flex: 1;
+  width: 70%;
 }
 .calendar img {
   object-fit: contain;
@@ -2156,10 +2157,16 @@ textarea {
 .list-container li {
   font-family: var(--font-family-primary);
   color: #3e3e3e;
-  margin-bottom: 25px;
-  font-size: 24px;
-  line-height: 33px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+}
+
+.list-container li div {
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -2179,8 +2186,8 @@ textarea {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   margin-right: 8px;
   border-radius: 50%;
   font-size: 15px;
