@@ -2031,7 +2031,7 @@ textarea {
   padding: 8rem 0;
   gap: 20px;
   position: relative;
-  max-width: 80vw;
+  max-width: 1600px;
 }
 .start-pattern {
   position: absolute;
