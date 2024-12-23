@@ -1617,10 +1617,10 @@ footer {
   font-family: var(--font-family-primary);
   font-size: 12px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  padding: 10px 15px;
 }
 .pricing-container h1 {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .toggle-btn-container {
   display: flex;
@@ -2135,7 +2135,7 @@ textarea {
 
 @media (min-width: 300px) and (max-width: 600px) {
   .max-container {
-    padding: 30px 0px;
+    padding: 30px 20px;
   }
   .header-container {
     padding: 20px;
@@ -2251,8 +2251,10 @@ textarea {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
   margin-right: 8px;
   border-radius: 50%;
   font-size: 15px;
@@ -2284,14 +2286,15 @@ textarea {
 
 .endlessDivTwo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 70px;
+  /* align-items: center; */
+  gap: 30px;
+  margin-top: 100px;
 }
 
 .outCall {
+  background-color: var(--white);
   display: flex;
   gap: 4rem;
   padding: 4rem 3rem;
@@ -2336,11 +2339,14 @@ textarea {
   border-radius: 15px;
   padding: 15px;
   transition: border-color 0.3s ease;
+  background-color: var(--white);
 }
+
 .outCall-details.inCall div {
   border: 1px solid var(--black);
 }
 .outCall-details img {
+  background-color: #f3f5f8;
   border: 2px solid #939393;
   padding: 10px;
   border-radius: 7px;
@@ -2349,6 +2355,34 @@ textarea {
   height: 60px;
 }
 .outCall-details h2 {
+  font-size: 24px;
+  line-height: 34px;
+}
+
+.incall-details {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.incall-details div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border: 2px solid #48454e26;
+  border-radius: 15px;
+  padding: 15px;
+  transition: border-color 0.3s ease;
+}
+.incall-details img {
+  border: 2px solid #005655;
+  padding: 10px;
+  border-radius: 7px;
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+}
+.incall-details h2 {
   font-size: 24px;
   line-height: 34px;
 }
@@ -2366,8 +2400,6 @@ textarea {
 }
 
 .tab-content {
-  gap: 20px;
-  border-width: 1px solid black;
   width: 100%;
 }
 
@@ -2541,20 +2573,24 @@ textarea {
 }
 
 /* new agent ai section */
-.new-ai-agents p {
+.new-ai-agents .sub-text {
   margin-top: 30px;
 }
 .agents-container {
   display: flex;
-  align-items: stretch; /* Ensure both sections stretch to the same height */
+  align-items: center;
   gap: 20px; /* Optional: Add space between sections */
   width: 100%;
   margin-top: 30px;
 }
 
-.agents-left-section,
-.agents-right-section {
+.agents-left-section {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.agents-right-section {
+  flex: 1.5;
   display: flex;
   flex-direction: column;
 }
@@ -2583,6 +2619,7 @@ textarea {
   font-size: 18px;
   line-height: 24px;
   color: var(--h1-color);
+  margin-top: 10px;
 }
 .agents-right-section img {
   max-width: 100%;
@@ -2591,7 +2628,10 @@ textarea {
   height: 100%;
   object-fit: fill;
 }
-
+.down-arrow {
+  height: 50px;
+  margin-bottom: 10px;
+}
 @media (max-width: 900px) {
   .agents-container {
     flex-direction: column;
