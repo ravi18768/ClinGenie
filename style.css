@@ -1834,11 +1834,17 @@ footer {
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
+  .left-section h1 {
+    text-align: center;
+  }
   .left-section p {
     font-size: 18px;
   }
 }
 @media (min-width: 100px) and (max-width: 600px) {
+  .left-section h1 {
+    text-align: center;
+  }
   .left-section p {
     font-size: 14px;
   }
@@ -2028,8 +2034,7 @@ textarea {
 .faq-block {
   /* background-color: var(--black); */
   border-radius: 16px;
-  margin-top: 10px;
-  padding: 30px 20px;
+  margin-top: 30px;
   max-width: 80%;
 }
 @media (max-width: 900px) {

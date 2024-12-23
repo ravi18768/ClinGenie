@@ -12,6 +12,13 @@
   border-radius: 12px;
   margin-top: 20px;
   width: 100%;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 .about-header {
   font-family: var(--font-family-primary);
