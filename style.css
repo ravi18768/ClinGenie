@@ -1836,6 +1836,7 @@ footer {
 @media (min-width: 600px) and (max-width: 900px) {
   .left-section h1 {
     text-align: center;
+    margin: 0;
   }
   .left-section p {
     font-size: 18px;
@@ -1844,6 +1845,7 @@ footer {
 @media (min-width: 100px) and (max-width: 600px) {
   .left-section h1 {
     text-align: center;
+    margin: 0;
   }
   .left-section p {
     font-size: 14px;
