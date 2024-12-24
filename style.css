@@ -263,6 +263,7 @@ p {
   font-weight: 500 !important;
   font-size: 22px;
   line-height: 25px;
+  width: 100%;
 }
 
 .btn:hover {
@@ -2098,6 +2099,12 @@ textarea {
   position: absolute;
 }
 
+@media (max-width: 900px) {
+  .max-container {
+    max-width: 90vw;
+  }
+}
+
 @media (max-width: 400px) {
   .max-container {
     max-width: 90vw;
@@ -2167,7 +2174,7 @@ textarea {
     padding: 60px 0px;
   }
   .header-container {
-    padding: 20px 30px;
+    padding: 20px 0px;
   }
 
   .left-section h1 {
@@ -2215,7 +2222,7 @@ textarea {
 }
 
 .sub-text2 {
-  color: var(--sub-text);
+  color: #0a0a0a;
   font-size: 18px;
   font-family: var(--font-family-primary);
   font-weight: 400;
