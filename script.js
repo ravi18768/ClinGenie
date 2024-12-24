@@ -264,6 +264,7 @@ function updateRandomText() {
   const newText = randomTexts[randomIndex];
   randomIndex = randomTexts.length - 1 != randomIndex ? randomIndex + 1 : 0;
   const btn1Element = document.querySelector(".random-text");
+  btn1Element.style.textTransform = "capitalize";
 
   typewriterEffect(btn1Element, newText, 30, function () {
     setTimeout(updateRandomText, 2000); // Wait 2 seconds before next text

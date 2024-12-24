@@ -80,6 +80,17 @@ h2 {
     font-size: 25px;
     line-height: 40px;
   }
+  .start-pattern {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .dot-img-hidden {
+    display: none;
+  }
+  br {
+    display: none;
+  }
 }
 h3 {
   color: #030014;
@@ -120,6 +131,9 @@ p {
 }
 
 /* Hero Section */
+.main-hero-container {
+  position: relative;
+}
 .hero-chip-container {
   display: flex;
   flex-direction: column;
@@ -155,6 +169,7 @@ p {
 @media (min-width: 300px) and (max-width: 400px) {
   .p2 {
     font-size: 11px;
+    padding: 10px;
   }
 }
 
@@ -174,7 +189,7 @@ p {
 @media (min-width: 300px) and (max-width: 400px) {
   .chip {
     font-size: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }
 @media (min-width: 400px) and (max-width: 600px) {
@@ -189,7 +204,6 @@ p {
   /* align-items: center; */
   text-align: center;
   position: relative;
-  gap: 30px;
 }
 .box1-content h1 {
   line-height: 84px;
@@ -225,7 +239,7 @@ p {
 }
 
 .bottom-top-progress {
-  margin-right: 5px;
+  /* margin-right: 5px; */
   width: 2px;
   height: 100px;
   background: linear-gradient(to top, #1a2e3500, #1a2e35);
