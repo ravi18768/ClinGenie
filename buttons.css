@@ -58,14 +58,21 @@
 
 /* Secondary Button */
 .button-secondary {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary);
   color: var(--black);
+}
+.button-secondary span {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 .button-secondary::before {
-  background-color: var(
-    --hover-color-secondary
-  ); /* Define a hover color for secondary */
+  background-color: var(--hover-color); /* Define a hover color for secondary */
 }
 
 .button-secondary:hover {
