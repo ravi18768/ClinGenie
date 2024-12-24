@@ -490,9 +490,6 @@ input::placeholder {
   outline: none;
 }
 
-#phone {
-  border-left: none;
-}
 .phone {
   display: flex;
   height: 55px;
@@ -1395,29 +1392,6 @@ footer {
   height: 100%;
 }
 
-.calendar-header h3 {
-  margin: 0 0 16px;
-  color: #333;
-  font-weight: 600;
-}
-
-.calendar-header .days button {
-  border: none;
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #333;
-  margin-right: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.calendar-header .days button:hover {
-  background: #007bff;
-  color: #ffffff;
-}
-
 .appointments {
   display: flex;
   flex-wrap: wrap;
@@ -1471,11 +1445,6 @@ footer {
     gap: 16px;
     padding: 0px;
   }
-
-  .calendar-header .days button {
-    font-size: 12px;
-    padding: 8px;
-  }
 }
 @media (max-width: 900px) {
   .appointment-section {
@@ -1497,11 +1466,6 @@ footer {
   .analytics-reports-section {
     flex-direction: column-reverse;
     gap: 16px;
-  }
-
-  .calendar-header .days button {
-    font-size: 12px;
-    padding: 8px;
   }
 }
 
@@ -3331,9 +3295,7 @@ textarea {
 }
 
 /* Change the style of the input field */
-#phone {
-  border-left: 1px solid #e6e8ec;
-}
+
 /* Customize the flag's size */
 .iti__flag {
   width: 40px;

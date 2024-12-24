@@ -150,15 +150,6 @@ const randomTexts = [
   "Automate patient engagement",
 ];
 
-// Array of random gradient colors
-const gradientColors = [
-  "linear-gradient(to right, #ff7e5f, #feb47b)",
-  "linear-gradient(to right, #6a11cb, #2575fc)",
-  "linear-gradient(to right, #11998e, #38ef7d)",
-  "linear-gradient(to right, #fc466b, #3f5efb)",
-  "linear-gradient(to right, #ff512f, #dd2476)",
-  "linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d)",
-];
 const voiceArr = [
   {
     profile_pic: "./assets/images/profile1.png",
@@ -258,9 +249,6 @@ function typewriterEffect(element, text, delay, callback) {
 // Function to update the text content randomly after previous typing is done
 let randomIndex = 0;
 function updateRandomText() {
-  // const randomIndex = Math.floor(Math.random() * randomTexts.length);
-  // const randomGradient =
-  //   gradientColors[Math.floor(Math.random() * gradientColors.length)];
   const newText = randomTexts[randomIndex];
   randomIndex = randomTexts.length - 1 != randomIndex ? randomIndex + 1 : 0;
   const btn1Element = document.querySelector(".random-text");
@@ -666,7 +654,7 @@ document.getElementById("showButton").addEventListener("click", function () {
   if (targetDiv.classList.contains("hidden")) {
     targetDiv.classList.remove("hidden");
     targetDiv.classList.add("visible");
-    showButton.textContent = "X";
+    showButton.textContent = "x";
   } else {
     targetDiv.classList.remove("visible");
     targetDiv.classList.add("hidden");
