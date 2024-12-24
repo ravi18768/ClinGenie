@@ -256,6 +256,7 @@ p {
   font-weight: 500 !important;
   font-size: 22px;
   line-height: 25px;
+  width: 100%;
 }
 
 .btn:hover {
@@ -2205,7 +2206,7 @@ textarea {
 }
 
 .sub-text2 {
-  color: var(--sub-text);
+  color: #0a0a0a;
   font-size: 18px;
   font-family: var(--font-family-primary);
   font-weight: 400;
@@ -2906,7 +2907,7 @@ textarea {
 /* End-to-End Patient Recruitment Automation  */
 
 .sub-title {
-  color: var(--black);
+  color: #242731;
   border-radius: 7px;
   line-height: 1;
   display: inline-block;
@@ -3019,7 +3020,7 @@ textarea {
 
 @media (max-width: 1200px) {
   .existing-card-description {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
   }
 }
@@ -3120,13 +3121,22 @@ textarea {
 
 .sub-title-existing {
   font-weight: 700;
-  font-size: 42px;
+  font-size: 50px;
   line-height: 68px;
   width: 80%;
 }
+
+@media (max-width: 1530px) {
+  .sub-title-existing {
+    font-size: 42px;
+    line-height: 50px;
+    width: 85%;
+  }
+}
+
 @media (max-width: 1200px) {
   .sub-title-existing {
-    font-size: 35px;
+    font-size: 40px;
     line-height: 40px;
     width: 90%;
   }
@@ -3134,7 +3144,14 @@ textarea {
 
 @media (max-width: 768px) {
   .sub-title-existing {
-    font-size: 28px;
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sub-title-existing {
+    font-size: 30px;
     line-height: 40px;
   }
 }
