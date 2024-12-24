@@ -396,39 +396,39 @@ toggleOptions.forEach((option) => {
 
 const faqListArray = [
   {
-    title: "How does Autocalls work as an AI phone call platform?",
+    title: "How does auto-calls work as an AI phone call platform?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
   {
     title: "I use a phone system. Can I use ClinGenie.ai?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
   {
     title: "Is expertise required for quality prompts?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
   {
-    title: "Can I set up automations with your service?",
+    title: "Can I set up automation with your service?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
   {
-    title: "Can I set up automations with your service?",
+    title: "Can I set up automation with your service?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
   {
     title: "How does the AI load with my company information?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
   {
     title: "How do I get a phone number from you?",
     description:
-      "Autocalls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Autocalls enhances engagement and streamlines communication using the latest technology.",
+      "Auto-calls AI automates customer interactions with a customizable AI voice agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) calls for tasks like lead qualification, customer support, and appointment scheduling. With no-code tools and flexible  deployment options, Auto-calls enhances engagement and streamlines communication using the latest technology.",
   },
 ];
 const faqBlock = document.getElementById("faq-block");
@@ -691,7 +691,7 @@ const leftInboundOptions = [
   },
   {
     imgSrc: "/assets/images/Lead pre qualification.png",
-    text: "Lead prequalification",
+    text: "Lead pre-qualification",
   },
   {
     imgSrc: "/assets/images/Confrmations and follow-up.png",
@@ -772,15 +772,15 @@ const pricingData = [
     description:
       "Upgrade your social portfolio with a stunning profile & enhanced shots.",
     features: [
-      "Create 1 Voice Agent",
+      "Create 1 voice agent",
       "400 minutes every month",
-      "1 Team Member",
-      "6 Basic Voices",
-      "Inbound and Outbound Agents",
-      "Call Recording and Transcription",
-      "Automated SMS Sending",
+      "1 team member",
+      "6 basic voices",
+      "Inbound and outbound agents",
+      "Call recording and transcription",
+      "Automated SMS sending",
       "Voicemail detection",
-      "Customer Sentiment Analysis",
+      "Customer sentiment analysis",
     ],
     buttonText: "Get started with Lite →",
   },
@@ -791,15 +791,15 @@ const pricingData = [
     description:
       "Upgrade your social portfolio with a stunning profile & enhanced shots.",
     features: [
-      "Create 1 Voice Agent",
+      "Create 1 voice agent",
       "10,000 minutes every month",
-      "2 Team Member",
-      "6 Basic Voices",
-      "Inbound and Outbound Agents",
-      "Call Recording and Transcription",
-      "Automated SMS Sending",
+      "2 team member",
+      "6 basic voices",
+      "Inbound and outbound Agents",
+      "Call recording and transcription",
+      "Automated SMS sending",
       "Voicemail detection",
-      "Customer Sentiment Analysis",
+      "Customer sentiment analysis",
     ],
     buttonText: "Get started with Essential →",
   },
@@ -810,15 +810,15 @@ const pricingData = [
     description:
       "Upgrade your social portfolio with a stunning profile & enhanced shots.",
     features: [
-      "Create 1 Voice Agent",
+      "Create 1 voice agent",
       "25,000 minutes every month",
-      "2 Team Member",
-      "6 Basic Voices",
-      "Inbound and Outbound Agents",
-      "Call Recording and Transcription",
-      "Automated SMS Sending",
+      "2 team member",
+      "6 basic voices",
+      "Inbound and outbound agents",
+      "Call recording and transcription",
+      "Automated SMS sending",
       "Voicemail detection",
-      "Customer Sentiment Analysis",
+      "Customer sentiment analysis",
     ],
     buttonText: "Get started with Growth →",
     highlighted: true,
@@ -829,15 +829,15 @@ const pricingData = [
     description:
       "Upgrade your social portfolio with a stunning profile & enhanced shots.",
     features: [
-      "Create No limit Voice Agent",
+      "Create no limit voice agent",
       "No limits minutes every month",
-      "No limits Team Member",
-      "6 Basic Voices",
-      "Inbound and Outbound Agents",
-      "Call Recording and Transcription",
-      "Call Recording and Transcription",
-      "Call Recording and Transcription",
-      "Call Recording and Transcription",
+      "No limits team member",
+      "6 basic voices",
+      "Inbound and outbound agents",
+      "Call recording and transcription",
+      "Call recording and transcription",
+      "Call recording and transcription",
+      "Call recording and transcription",
     ],
     buttonText: "Contact Sales →",
   },
