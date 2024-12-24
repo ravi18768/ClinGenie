@@ -2720,11 +2720,14 @@ textarea {
   transition: background-color 0.3s, border-color 0.3s;
   cursor: pointer;
 }
-
+.menu-item.active {
+  background-color: var(--primary);
+  color: white;
+}
 .menu-item:hover {
   background-color: var(--primary);
 }
-.menu-item:hover .child {
+.active-child {
   color: var(--white);
 }
 .menu-item p {
@@ -2732,7 +2735,6 @@ textarea {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color: var(--h1-color);
   margin-top: 10px;
 }
 .agents-right-section img {

@@ -875,7 +875,6 @@ function renderPricingCards() {
 }
 renderPricingCards();
 
-// new ai agents image dynamic
 document.addEventListener("DOMContentLoaded", () => {
   const menuItems = document.querySelectorAll(".menu-item");
   const displayImage = document.getElementById("display-image");
@@ -883,10 +882,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set the default image
   displayImage.src = "./assets/images/three/image1.svg";
 
+  // Add hover functionality
   menuItems.forEach((item) => {
     item.addEventListener("mouseover", () => {
       const image = item.getAttribute("data-image");
-      displayImage.src = `${image}`;
+      displayImage.src = image;
+
+      // Remove active and active-child classes from all items
+      menuItems.forEach((menuItem) => {
+        menuItem.classList.remove("active");
+        const children = menuItem.querySelectorAll("h4, p");
+        children.forEach((child) => child.classList.remove("active-child"));
+      });
+
+      // Add active and active-child classes to the hovered item
+      item.classList.add("active");
+      const children = item.querySelectorAll("h4, p");
+      children.forEach((child) => child.classList.add("active-child"));
     });
   });
 });
