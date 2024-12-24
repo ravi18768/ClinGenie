@@ -359,19 +359,17 @@ function renderSlider() {
     slide.innerHTML = `<div class="profile">
                           <img src=${item?.profile_pic} alt="profile" class="pro-img"/>
                           <div class="audio-wave">
-                          <div id="waveform${index}" style="width:100%"></div>
+                            <div id="waveform${index}" style="width:100%"></div>
                           </div>
-                          <div class="play">
                             <button class="play-btn" id="playButton${index}">
                                 <img src="./assets/images/play.svg" alt="Play" class="play-pause-img"/>
                             </button>
                         </div>
-                      </div>
-                    <div class="details">
+                        <div class="details">
                             <h2>${item?.name}</h2>
                             <p>${item?.description}</p>
                         </div>
-                  `;
+                      `;
     slider.appendChild(slide);
 
     //audio wave

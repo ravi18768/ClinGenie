@@ -24,7 +24,6 @@
                 <img src="./assets/images/mainLogo.svg" alt="ClinGenie" class="mainLogo" />
                 <ul class="tabs">
                     <li class="tab"><a href="#">Home</a></li>
-                    <li class="tab"><a href="#">Blog</a></li>
                     <li class="tab"><a href="#pricing">Price</a></li>
                     <li class="tab"><a href="#contact">Contact</a></li>
                 </ul>
@@ -64,7 +63,7 @@
                 alt="star" />
             <div class="max-container">
                 <div class="hero-chip-container">
-                    <div style="width: 65%;margin-bottom: 10px;">
+                    <div style="width: 65%;margin-bottom: 10px;overflow: hidden;">
                         <div class="loading-bar"></div>
                     </div>
                     <p class="p2"><span class="chip">NEW</span><span>
@@ -73,7 +72,9 @@
                 </div>
                 <div class="box1-content">
                     <!-- this dive is used to display the bottom to top slide animation line -->
-                    <div class="bottom-top-progress"></div>
+                    <div style="overflow: hidden;">
+                        <div class="bottom-top-progress"></div>
+                    </div>
                     <div style="display: flex;gap:20px">
                         <div>
                             <h1>
@@ -87,9 +88,9 @@
                                 Enrollment Success.
                             </p>
                         </div>
-                        <div style="padding-top: 20px;">
-                            <img src=" ./assets/images/hero-right-img.svg" alt="right-img" />
-                        </div>
+                    </div>
+                    <div style="padding-top: 20px;position: absolute;right: 0px;">
+                        <img src=" ./assets/images/hero-right-img.svg" alt="right-img" />
                     </div>
                 </div>
                 <div class="features">
@@ -129,9 +130,7 @@
                                     <input type="number" maxlength="10" placeholder="Enter Number" id="phone">
                                 </select> -->
                         </div>
-                        <div class="form-group">
-                            <button class="btn">Call me now</button>
-                        </div>
+                        <button class="btn">Call me now</button>
 
                         <!-- Element to render the animation -->
                         <div id="lottie-animation" class="arrow-lottie">
