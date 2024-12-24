@@ -2511,6 +2511,43 @@ textarea {
     font-size: 16px;
   }
 }
+@media (max-width: 400px) {
+  .outCall div h2 {
+    font-size: 24px;
+  }
+  .outCall div p {
+    font-size: 16px;
+  }
+  .outCall-details,
+  .incall-details {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  .outCall img {
+    width: 80px;
+    height: 80px;
+  }
+  .outCall {
+    padding: 1rem;
+  }
+  .outCall-details div,
+  .incall-details div {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .incall-details h2,
+  .outCall-details h2 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .outCall h2 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+  .outCall p {
+    font-size: 16px;
+  }
+}
 .outCallBox {
   display: flex;
   padding: 10px;
