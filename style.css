@@ -66,8 +66,10 @@ h1 {
   font-weight: 700;
   font-size: 60px;
   text-align: center;
+  text-transform: capitalize;
 }
 h2 {
+  text-transform: capitalize;
   color: #242731;
   line-height: 72px;
   font-family: var(--font-family-primary);
@@ -93,6 +95,7 @@ h2 {
   }
 }
 h3 {
+  text-transform: capitalize;
   color: #030014;
   font-family: var(--font-family-primary);
   font-weight: 700;
@@ -2244,6 +2247,7 @@ textarea {
   font-family: var(--font-family-primary);
   font-weight: 500;
   line-height: 34px;
+  text-transform: capitalize;
 }
 @media (max-width: 600px) {
   .sub-text {
