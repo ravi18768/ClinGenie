@@ -2340,31 +2340,38 @@ textarea {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
   justify-content: center;
-  /* align-items: center; */
-  gap: 30px;
+  gap: 40px !important;
   margin-top: 100px;
 }
 
 .outCall {
   background-color: var(--white);
   display: flex;
-  gap: 4rem;
-  padding: 4rem 3rem;
+  align-items: center;
+  gap: 10%;
+  padding: 3rem;
   border-radius: 15px;
   border: 1px solid #48454e26;
   cursor: pointer; /* Makes it clear the div is clickable */
   transition: background-color 0.3s ease;
+  flex: 1;
 }
 
 .outCall.inCall {
   background-color: var(--secondary); /* Change background to green */
   color: var(--white); /* Adjust text color for better contrast */
 }
+.outCall p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
 
 .outCall.inCall h2,
 .outCall.inCall p {
   color: white; /* Ensure h2 and p tags have white text */
 }
+
 .outCall img {
   width: 150px;
   height: 130px;
@@ -2375,6 +2382,7 @@ textarea {
   line-height: 35px;
   margin-bottom: 10px;
   align-items: center;
+  font-weight: 700;
 }
 
 .outCall-details {
@@ -2406,9 +2414,11 @@ textarea {
   width: 60px;
   height: 60px;
 }
-.outCall-details h2 {
-  font-size: 24px;
+.outCall-details h2,
+.incall-details h2 {
+  font-size: 22px;
   line-height: 34px;
+  font-weight: 600;
 }
 
 .incall-details {
@@ -2434,10 +2444,6 @@ textarea {
   width: 60px;
   height: 60px;
 }
-.incall-details h2 {
-  font-size: 24px;
-  line-height: 34px;
-}
 
 .tabEnd {
   display: flex;
@@ -2454,20 +2460,55 @@ textarea {
 .tab-content {
   width: 100%;
 }
-
+@media (max-width: 1350px) {
+  .incall-details h2,
+  .outCall-details h2 {
+    font-size: 18px;
+  }
+}
 @media (max-width: 900px) {
   .endlessDivTwo {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 }
 @media (max-width: 768px) {
+  .outCall img {
+    width: 100px;
+    height: 100px;
+  }
+  .outCall {
+    padding: 2rem;
+  }
   .tab-content {
     flex-direction: column;
     gap: 16px;
   }
-  .endlessDivTwo {
-    display: block;
-    flex-direction: column;
+  .outCall-details div {
+    padding: 10px;
+    gap: 15px;
+  }
+  .incall-details div {
+    padding: 10px;
+    gap: 15px;
+  }
+  .incall-details h2,
+  .outCall-details h2 {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .incall-details img,
+  .outCall-details img {
+    padding: 8px;
+    margin-left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+  .outCall h2 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+  .outCall p {
+    font-size: 16px;
   }
 }
 .outCallBox {
