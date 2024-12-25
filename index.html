@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClinGenie</title>
+    <link rel="icon" href="./assets/images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
@@ -14,8 +15,6 @@
 <body>
     <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.1/lottie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <header>
@@ -106,9 +105,11 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div> -->
-                    <video class="video-container" width="100%" controls muted poster="./assets/images/thumbnail.svg">
-                        <source src="./assets/video/video.mp4" type="video/webm">
-                    </video>
+                    <div class="video-wrapper">
+                        <video class="video-container" controls poster="./assets/images/thumbnail.svg">
+                            <source src="./assets/video/video.mp4" type="video/webm">
+                        </video>
+                    </div>
                     <div class="form-container" style="position: relative;">
                         <div>
                             <h3 class="see-how-title">See how, <span class="highlightText">
@@ -136,7 +137,10 @@
                         </div>
 
                         <!-- Element to render the animation -->
-                        <div id="lottie-animation" class="arrow-lottie">
+                        <div class="arrow-lottie">
+                            <lottie-player src="./assets/lottie/arrow.json" background="transparent" speed="1" loop
+                                autoplay>
+                            </lottie-player>
                             <span>
                                 Try A free <p>test call</p>
                             </span>
@@ -870,6 +874,7 @@
         </div>
     </footer>
 
+    <script src="./assets/lottie/lottie-player.js"></script>
     <script src="script.js"></script>
 </body>
 

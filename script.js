@@ -744,14 +744,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderDynamicOptions("left-inbound", leftInboundOptions);
 });
 
-var animation = lottie.loadAnimation({
-  container: document.getElementById("lottie-animation"),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "./assets/lottie/arrow.json", // Replace with the correct path to the Lottie JSON file
-});
-
 const pricingData = [
   {
     title: "Lite",
