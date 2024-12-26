@@ -305,12 +305,7 @@ faqListArray.forEach((categoryGroup, categoryIndex) => {
   if (categoryGroup.category) {
     const categoryTitle = document.createElement("h2");
     categoryTitle.textContent = categoryGroup.category;
-    categoryTitle.style.cssText = `
-      font-size: 24px;
-      color: #333;
-      margin: 30px 0 20px 0;
-      padding-left: 20px;
-    `;
+    categoryTitle.className = "category-title";
     categoryContainer.appendChild(categoryTitle);
   }
 
