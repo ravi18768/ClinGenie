@@ -29,6 +29,7 @@
   font-family: var(--font-family-primary);
   font-weight: 600;
   color: #061c3d;
+  line-height: 25px;
 }
 
 .faq-block ul p {
