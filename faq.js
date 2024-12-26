@@ -59,7 +59,7 @@ const faqListArray = [
       },
       {
         title:
-          "How does ClinGenie’s AI voice agent handle sensitive or complex patient titles?",
+          "How does ClinGenie’s AI voice agent handle sensitive or complex patient questions?",
         description:
           "ClinGenie’s AI voice agents are designed with empathy and intelligence, providing clear, accurate, and patient-friendly responses. Complex queries can be escalated to human representatives if needed.",
       },
