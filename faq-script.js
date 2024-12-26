@@ -283,19 +283,35 @@ let openParentDiv = null;
 let openToggleButton = null;
 let openTitle = null;
 
+// Create divider element function
+const createDivider = () => {
+  const divider = document.createElement("hr");
+  divider.style.cssText = `
+    border: none;
+    height: 1px;
+    background-color: #E5E5E5;
+    margin: 20px 0;
+    width: 100%;
+  `;
+  return divider;
+};
+
 // Loop through the faqListArray to create list items dynamically
-faqListArray.forEach((categoryGroup) => {
+faqListArray.forEach((categoryGroup, categoryIndex) => {
+  // Create a container for each category
+  const categoryContainer = document.createElement("div");
+
   // Create category title if it exists
   if (categoryGroup.category) {
     const categoryTitle = document.createElement("h2");
     categoryTitle.textContent = categoryGroup.category;
     categoryTitle.style.cssText = `
-      font-size: 25px;
-      color: #000;
-      margin: 30px 0px;
+      font-size: 24px;
+      color: #333;
+      margin: 30px 0 20px 0;
       padding-left: 20px;
     `;
-    faqList.appendChild(categoryTitle);
+    categoryContainer.appendChild(categoryTitle);
   }
 
   // Loop through items in each category
@@ -459,8 +475,16 @@ faqListArray.forEach((categoryGroup) => {
     li.appendChild(toggleButton);
     li.appendChild(description);
     parentDiv.appendChild(li);
-    faqList.appendChild(parentDiv);
+    categoryContainer.appendChild(parentDiv);
   });
+
+  // Append the category container to the FAQ list
+  faqList.appendChild(categoryContainer);
+
+  // Add divider after each category except the last one
+  if (categoryIndex < faqListArray.length - 1) {
+    faqList.appendChild(createDivider());
+  }
 });
 
 // Append the FAQ list to the FAQ block container
