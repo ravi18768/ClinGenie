@@ -373,7 +373,7 @@ faqListArray.forEach((categoryGroup, categoryIndex) => {
           margin: 0;
           cursor: pointer;
           transition: all 0.3s ease;
-          color: black;
+          color: #061c3d;
         `;
       } else if (element === openDescription) {
         element.style.cssText = `
